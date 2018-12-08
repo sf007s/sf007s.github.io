@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://smallfang.tk/"/>
-  <updated>2018-12-07T12:24:46.584Z</updated>
+  <updated>2018-12-08T14:15:06.887Z</updated>
   <id>http://smallfang.tk/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>博客更新说明</title>
+    <link href="http://smallfang.tk/2018/12/08/%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E/"/>
+    <id>http://smallfang.tk/2018/12/08/博客更新说明/</id>
+    <published>2018-12-08T14:13:28.000Z</published>
+    <updated>2018-12-08T14:15:06.887Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="V0-1-Melody"><a href="#V0-1-Melody" class="headerlink" title="V0.1 Melody"></a>V0.1 Melody</h1><ul><li>更换主题</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;V0-1-Melody&quot;&gt;&lt;a href=&quot;#V0-1-Melody&quot; class=&quot;headerlink&quot; title=&quot;V0.1 Melody&quot;&gt;&lt;/a&gt;V0.1 Melody&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;更换主题&lt;/li&gt;
+&lt;/ul&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://smallfang.tk/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>五分钟学会动态规划-上升子序列</title>
