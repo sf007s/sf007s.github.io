@@ -1,160 +1,20 @@
-<!DOCTYPE html>
-<html>
-  <!-- Html Head Tag-->
-  <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="author" content="smallfang">
-  <!-- Open Graph Data -->
-  <meta property="og:title" content="题解-NOIP2018T4对称二叉树">
-  <meta property="og:description" content="">
-  <meta property="og:site_name" content="smallfang">
-  <meta property="og:type" content="article">
-  <meta property="og:image" content="http://smallfang.tk">
-  
-    <link rel="alternate" href="/atom.xml" title="smallfang" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="https://www.smallfang.tk/99640.png">
-  
-
-  <!-- Site Title -->
-  <title>smallfang</title>
-
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="/css/bootstrap.min.css">
-  <!-- Custom CSS -->
-  
-  <link rel="stylesheet" href="/css/style.light.css">
-
-  <!-- Google Analytics -->
-  
-
-</head>
-
-  <body>
-    <!-- Page Header -->
-
-
-<header class="site-header header-background" style="background-image: url(/img/default-banner-dark.jpg)">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="page-title with-background-image">
-          <p class="title">题解-NOIP2018T4对称二叉树</p>
-          <p class="subtitle"></p>
-        </div>
-        <div class="site-menu with-background-image">
-          <ul>
-            
-              <li>
-                <a href="/">
-                  
-                  Home
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="/archives">
-                  
-                  Archives
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="https://github.comfyp007">
-                  
-                  Github
-                  
-                </a>
-              </li>
-            
-              <li>
-                <a href="mailto:smallfang007@gmail.com">
-                  
-                  Email
-                  
-                </a>
-              </li>
-            
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</header>
-
-<article>
-  <div class="container typo">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <div class="post-info text-muted">
-          
-            <!-- Author -->
-            <span class="author info">By smallfang</span>
-          
-          <!-- Date -->
-          <span class="date-time info">On
-            <span class="date">2018-12-01</span>
-            <span class="time">20:39:43</span>
-          </span>
-          
-        </div>
-        <!-- Tags -->
-        
-          <div class="post-tags text-muted">
-            Tags: 
-
-<a class="tag" href="/tags/题解/">#题解</a>
-
-
-          </div>
-        
-        <!-- Post Main Content -->
-        <div class="post-content">
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>smallfang noip 考试失利所以得了198,感觉????</p>
+<!DOCTYPE html><html><head><meta name="generator" content="Hexo 3.8.0"><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><meta name="description" content="题解-NOIP2018T4对称二叉树"><meta name="keywords" content="题解"><meta name="author" content="smallfang"><meta name="copyright" content="smallfang"><title>题解-NOIP2018T4对称二叉树 | smallfang</title><link rel="shortcut icon" href="/melody-favicon.ico"><link rel="stylesheet" href="/css/index.css?version=1.5.6"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css?version=1.5.6"><link rel="dns-prefetch" href="https://cdn.staticfile.org"><link rel="dns-prefetch" href="https://cdn.bootcss.com"><link rel="dns-prefetch" href="https://creativecommons.org"><link rel="dns-prefetch" href="https://unpkg.com"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitment/style/default.min.css"><script src="https://cdn.jsdelivr.net/npm/gitment/dist/gitment.browser.min.js"></script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  }
+} </script></head><body><i class="fa fa-arrow-right" id="toggle-sidebar" aria-hidden="true"></i><div id="sidebar"><div class="toggle-sidebar-info text-center"><span data-toggle="Toggle article">Toggle site</span><hr></div><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar"></div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#题目"><span class="toc-number">2.</span> <span class="toc-text">题目</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码"><span class="toc-number">3.</span> <span class="toc-text">代码</span></a></li></ol></div></div><div class="author-info hide"><div class="author-info__avatar text-center"><img src="/img/avatar.png"></div><div class="author-info__name text-center">smallfang</div><div class="author-info__description text-center"></div><hr><div class="author-info-articles"><a class="author-info-articles__archives article-meta" href="/archives"><span class="pull-left">Articles</span><span class="pull-right">8</span></a><a class="author-info-articles__tags article-meta" href="/tags"><span class="pull-left">Tags</span><span class="pull-right">2</span></a><a class="author-info-articles__categories article-meta" href="/categories"><span class="pull-left">Categories</span><span class="pull-right">1</span></a></div></div></div><div id="content-outer"><div class="no-bg" id="top-container"><div id="page-header"><span class="pull-left"> <a id="site-name" href="/">smallfang</a></span><i class="fa fa-bars toggle-menu pull-right" aria-hidden="true"></i><span class="pull-right menus"><a class="site-page" href="/">Home</a><a class="site-page" href="/archives">Archives</a><a class="site-page" href="/tags">Tags</a><a class="site-page" href="/categories">Categories</a></span></div><div id="post-info"><div id="post-title">题解-NOIP2018T4对称二叉树</div><div id="post-meta"><time class="post-meta__date"><i class="fa fa-calendar" aria-hidden="true"></i> 2018-12-01</time></div></div></div><div class="layout" id="content-inner"><article id="post"><div class="article-container" id="post-content"><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>smallfang noip 考试失利所以得了198,感觉????</p>
 <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>应该都知道</p>
-<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#define ull unsigned long long</span><br><span class="line">using namespace std;</span><br><span class="line">int ans=1,n,v[1000005],l[1000005],r[10000005]; </span><br><span class="line">struct node&#123;</span><br><span class="line">    int d;</span><br><span class="line">    int t;</span><br><span class="line">    int w;</span><br><span class="line">    node(int da,int ta,int tw)</span><br><span class="line">    &#123;</span><br><span class="line">    	d=da;</span><br><span class="line">    	t=ta;</span><br><span class="line">    	w=tw;</span><br><span class="line">    &#125;</span><br><span class="line">    bool operator==(const node&amp;b)const&#123;return d==b.d&amp;&amp;w==b.w&amp;&amp;t==b.t;&#125;</span><br><span class="line">&#125;; </span><br><span class="line">ull id(int x,int *l1,int *r1,ull h)</span><br><span class="line">&#123;</span><br><span class="line">if(l1[x]&gt;0) h=id(l1[x],l1,r1,h*1009+1);  </span><br><span class="line">if(r1[x]&gt;0) h=id(r1[x],l1,r1,h*1009+2);</span><br><span class="line">return h*1009+v[x];</span><br><span class="line">&#125;</span><br><span class="line">node dfs(int x)</span><br><span class="line">&#123;</span><br><span class="line">    if(x&lt;0)return node(0,0,0);</span><br><span class="line">    node ll=dfs(l[x]);</span><br><span class="line">    node rr=dfs(r[x]);</span><br><span class="line">    if(ll==rr&amp;&amp;l[x]&gt;0&amp;&amp;id(l[x],l,r,0)==id(r[x],r,l,0))</span><br><span class="line">        ans=max(ans,2*ll.t+1);</span><br><span class="line">    return node(max(ll.d,rr.d)+1,ll.t+rr.t+1,ll.w+rr.w+v[x]);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    for(int i=1;i&lt;=n;i++)cin&gt;&gt;v[i];</span><br><span class="line">    for(int i=1;i&lt;=n;i++)cin&gt;&gt;l[i]&gt;&gt;r[i];</span><br><span class="line">    dfs(1);</span><br><span class="line">    cout&lt;&lt;ans;</span><br><span class="line">    return 0;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-        </div>
-      </div>
-    </div>
-  </div>
-</article>
-
-
-
-    <!-- Footer -->
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-        <p class="copyright text-muted">
-          Theme By <a target="_blank" href="https://github.com/levblanc">Levblanc.</a>
-          Inspired By <a target="_blank" href="https://github.com/klugjo/hexo-theme-clean-blog">Clean Blog.</a>
-        </p><p class="copyright text-muted">
-          Powered By <a target="_blank" href="https://hexo.io/">Hexo.</a>
-        </p>
-      </div>
-    </div>
-  </div>
-</footer>
-
-
-    <!-- After Footer Scripts -->
-<script src="/js/highlight.pack.js"></script>
-<script>
-  document.addEventListener("DOMContentLoaded", function(event) {
-    var codeBlocks = Array.prototype.slice.call(document.getElementsByTagName('pre'))
-    codeBlocks.forEach(function(block, index) {
-      hljs.highlightBlock(block);
-    });
-  });
-</script>
-
-  </body>
-</html>
-
+<h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#define ull unsigned long long</span><br><span class="line">using namespace std;</span><br><span class="line">int ans=1,n,v[1000005],l[1000005],r[10000005]; </span><br><span class="line">struct node&#123;</span><br><span class="line">    int d;</span><br><span class="line">    int t;</span><br><span class="line">    int w;</span><br><span class="line">    node(int da,int ta,int tw)</span><br><span class="line">    &#123;</span><br><span class="line">    	d=da;</span><br><span class="line">    	t=ta;</span><br><span class="line">    	w=tw;</span><br><span class="line">    &#125;</span><br><span class="line">    bool operator==(const node&amp;b)const&#123;return d==b.d&amp;&amp;w==b.w&amp;&amp;t==b.t;&#125;</span><br><span class="line">&#125;; </span><br><span class="line">ull id(int x,int *l1,int *r1,ull h)</span><br><span class="line">&#123;</span><br><span class="line">if(l1[x]&gt;0) h=id(l1[x],l1,r1,h*1009+1);  </span><br><span class="line">if(r1[x]&gt;0) h=id(r1[x],l1,r1,h*1009+2);</span><br><span class="line">return h*1009+v[x];</span><br><span class="line">&#125;</span><br><span class="line">node dfs(int x)</span><br><span class="line">&#123;</span><br><span class="line">    if(x&lt;0)return node(0,0,0);</span><br><span class="line">    node ll=dfs(l[x]);</span><br><span class="line">    node rr=dfs(r[x]);</span><br><span class="line">    if(ll==rr&amp;&amp;l[x]&gt;0&amp;&amp;id(l[x],l,r,0)==id(r[x],r,l,0))</span><br><span class="line">        ans=max(ans,2*ll.t+1);</span><br><span class="line">    return node(max(ll.d,rr.d)+1,ll.t+rr.t+1,ll.w+rr.w+v[x]);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    for(int i=1;i&lt;=n;i++)cin&gt;&gt;v[i];</span><br><span class="line">    for(int i=1;i&lt;=n;i++)cin&gt;&gt;l[i]&gt;&gt;r[i];</span><br><span class="line">    dfs(1);</span><br><span class="line">    cout&lt;&lt;ans;</span><br><span class="line">    return 0;	</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">smallfang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://smallfang.tk/2018/12/01/题解-NOIP2018T4对称二叉树/">http://smallfang.tk/2018/12/01/题解-NOIP2018T4对称二叉树/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/题解/">题解</a></div><nav id="pagination"><div class="prev-post pull-left"><a href="/2018/12/04/NOIP-PJ-省一祭/"><i class="fa fa-chevron-left">  </i><span>NOIP PJ 省一祭</span></a></div><div class="next-post pull-right"><a href="/2018/11/30/Blog-is-closeing/"><span>Blog is closeing!</span><i class="fa fa-chevron-right"></i></a></div></nav><div id="gitment-container"></div><script>var gitment = new Gitment({
+  owner: '',
+  repo: '',
+  oauth: {
+    client_id: '[object Object]',
+    client_secret: '[object Object]'
+  }
+})
+gitment.render('gitment-container')</script></div></div><footer><div class="layout" id="footer"><div class="copyright">&copy;2013 - 2018 By smallfang</div><div class="framework-info"><span>Driven - </span><a href="http://hexo.io"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme - </span><a href="https://github.com/Molunerfinn/hexo-theme-melody"><span>Melody</span></a></div><div class="busuanzi"><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><span id="busuanzi_container_page_pv"><i class="fa fa-file-o"></i><span id="busuanzi_value_page_pv"></span><span></span></span></div></div></footer><i class="fa fa-arrow-up" id="go-up" aria-hidden="true"></i><script src="https://cdn.jsdelivr.net/npm/animejs@latest/anime.min.js"></script><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-animate@latest/velocity.min.js"></script><script src="https://cdn.jsdelivr.net/npm/velocity-ui-pack@latest/velocity.ui.min.js"></script><script src="/js/utils.js?version=1.5.6"></script><script src="/js/fancybox.js?version=1.5.6"></script><script src="/js/sidebar.js?version=1.5.6"></script><script src="/js/copy.js?version=1.5.6"></script><script src="/js/fireworks.js?version=1.5.6"></script><script src="/js/transition.js?version=1.5.6"></script><script src="/js/scroll.js?version=1.5.6"></script><script src="/js/head.js?version=1.5.6"></script></body></html>
