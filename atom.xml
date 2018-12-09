@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://smallfang.tk/"/>
-  <updated>2018-12-08T14:15:06.887Z</updated>
+  <updated>2018-12-09T13:05:33.273Z</updated>
   <id>http://smallfang.tk/</id>
   
   <author>
@@ -17,22 +17,46 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>博客更新说明</title>
-    <link href="http://smallfang.tk/2018/12/08/%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E/"/>
-    <id>http://smallfang.tk/2018/12/08/博客更新说明/</id>
-    <published>2018-12-08T14:13:28.000Z</published>
-    <updated>2018-12-08T14:15:06.887Z</updated>
+    <title>flag?</title>
+    <link href="http://smallfang.tk/2018/12/09/flag/"/>
+    <id>http://smallfang.tk/2018/12/09/flag/</id>
+    <published>2018-12-09T13:02:47.000Z</published>
+    <updated>2018-12-09T13:05:33.273Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="V0-1-Melody"><a href="#V0-1-Melody" class="headerlink" title="V0.1 Melody"></a>V0.1 Melody</h1><ul><li>更换主题</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>1.推出v0.3 未达成<br>2.Ac 250道题 未达成</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h1 id=&quot;V0-1-Melody&quot;&gt;&lt;a href=&quot;#V0-1-Melody&quot; class=&quot;headerlink&quot; title=&quot;V0.1 Melody&quot;&gt;&lt;/a&gt;V0.1 Melody&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;更换主题&lt;/li&gt;
-&lt;/ul&gt;
+        &lt;p&gt;1.推出v0.3 未达成&lt;br&gt;2.Ac 250道题 未达成&lt;/p&gt;
 
+      
+    
+    </summary>
+    
+    
+      <category term="flag" scheme="http://smallfang.tk/tags/flag/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>博客更新说明</title>
+    <link href="http://smallfang.tk/2018/12/08/%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E/"/>
+    <id>http://smallfang.tk/2018/12/08/博客更新说明/</id>
+    <published>2018-12-08T14:13:28.000Z</published>
+    <updated>2018-12-09T11:50:09.564Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="V0-2"><a href="#V0-2" class="headerlink" title="V0.2"></a>V0.2</h1><ul><li>减去:评论功能</li></ul><h1 id="V0-1"><a href="#V0-1" class="headerlink" title="V0.1"></a>V0.1</h1><ul><li>更换主题</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;V0-2&quot;&gt;&lt;a href=&quot;#V0-2&quot; class=&quot;headerlink&quot; title=&quot;V0.2&quot;&gt;&lt;/a&gt;V0.2&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;减去:评论功能&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&quot;V0-1&quot;&gt;&lt;a href=&quot;#V0-1&quot; class=&quot;
       
     
     </summary>
