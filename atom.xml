@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://smallfang.tk/"/>
-  <updated>2018-12-09T13:05:33.273Z</updated>
+  <updated>2018-12-11T10:28:58.758Z</updated>
   <id>http://smallfang.tk/</id>
   
   <author>
@@ -21,17 +21,13 @@
     <link href="http://smallfang.tk/2018/12/09/flag/"/>
     <id>http://smallfang.tk/2018/12/09/flag/</id>
     <published>2018-12-09T13:02:47.000Z</published>
-    <updated>2018-12-09T13:05:33.273Z</updated>
+    <updated>2018-12-11T10:28:58.758Z</updated>
     
-    <content type="html"><![CDATA[<p>1.推出v0.3 未达成<br>2.Ac 250道题 未达成</p>]]></content>
+    <content type="html"><![CDATA[<p>1<br><a id="more"></a><br>1.推出v0.3 未达成<br>2.Ac 200道题 √</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;1.推出v0.3 未达成&lt;br&gt;2.Ac 250道题 未达成&lt;/p&gt;
-
-      
+      &lt;p&gt;1&lt;br&gt;
     
     </summary>
     
@@ -45,19 +41,13 @@
     <link href="http://smallfang.tk/2018/12/08/%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E/"/>
     <id>http://smallfang.tk/2018/12/08/博客更新说明/</id>
     <published>2018-12-08T14:13:28.000Z</published>
-    <updated>2018-12-09T11:50:09.564Z</updated>
+    <updated>2018-12-11T10:28:59.670Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="V0-2"><a href="#V0-2" class="headerlink" title="V0.2"></a>V0.2</h1><ul><li>减去:评论功能</li></ul><h1 id="V0-1"><a href="#V0-1" class="headerlink" title="V0.1"></a>V0.1</h1><ul><li>更换主题</li></ul>]]></content>
+    <content type="html"><![CDATA[<p>1<br><a id="more"></a></p><h1 id="V0-2"><a href="#V0-2" class="headerlink" title="V0.2"></a>V0.2</h1><ul><li>减去:评论功能</li></ul><h1 id="V0-1"><a href="#V0-1" class="headerlink" title="V0.1"></a>V0.1</h1><ul><li>更换主题</li></ul>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;V0-2&quot;&gt;&lt;a href=&quot;#V0-2&quot; class=&quot;headerlink&quot; title=&quot;V0.2&quot;&gt;&lt;/a&gt;V0.2&lt;/h1&gt;&lt;ul&gt;
-&lt;li&gt;减去:评论功能&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h1 id=&quot;V0-1&quot;&gt;&lt;a href=&quot;#V0-1&quot; class=&quot;
-      
+      &lt;p&gt;1&lt;br&gt;
     
     </summary>
     
@@ -67,27 +57,13 @@
   </entry>
   
   <entry>
-    <title>五分钟学会动态规划-上升子序列</title>
-    <link href="http://smallfang.tk/2018/12/07/%E4%BA%94%E5%88%86%E9%92%9F%E5%AD%A6%E4%BC%9A%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92-%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/"/>
-    <id>http://smallfang.tk/2018/12/07/五分钟学会动态规划-上升子序列/</id>
-    <published>2018-12-07T12:24:46.000Z</published>
-    <updated>2018-12-07T12:24:46.584Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>洛谷题解-AT2281-Sum of Three Integers</title>
     <link href="http://smallfang.tk/2018/12/06/%E6%B4%9B%E8%B0%B7%E9%A2%98%E8%A7%A3-AT2281-Sum-of-Three-Integers/"/>
     <id>http://smallfang.tk/2018/12/06/洛谷题解-AT2281-Sum-of-Three-Integers/</id>
     <published>2018-12-06T12:25:07.000Z</published>
-    <updated>2018-12-10T09:21:25.391Z</updated>
+    <updated>2018-12-11T10:08:32.931Z</updated>
     
-    <content type="html"><![CDATA[<a id="more"></a><p>嘿嘿嘿,做红题的感觉真不错</p><h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h1><p>这道题就是求a+b+c=s有几种等式成立的可能性</p><p>0&lt;=a,b,c&lt;=k</p><p>给定s,k;</p><p>求出方案数.</p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h2 id="暴力n-3"><a href="#暴力n-3" class="headerlink" title="暴力n^3"></a>暴力n^3</h2><p>对,看到是红题就认为暴力n^3能过，然后就凉了…</p><p>下面是代码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int k,s;</span><br><span class="line">    cin&gt;&gt;k&gt;&gt;s;</span><br><span class="line">    int ans=0;</span><br><span class="line">    for(int i=0;i&lt;=k;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int j=0;j&lt;=k;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int ij=0;ij&lt;=k;ij++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(i+j+ij==s)</span><br><span class="line">                &#123;</span><br><span class="line">                    ans++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="n-2-算法"><a href="#n-2-算法" class="headerlink" title="$n^2$算法"></a>$n^2$算法</h2><p>em…</p><p>可以写两个循环求出第3个值。如果第三个值符合要求，则答案++,下面是AC代码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">int k,s;</span><br><span class="line">cin&gt;&gt;k&gt;&gt;s;</span><br><span class="line">int ans=0;</span><br><span class="line">for(int i=0;i&lt;=k;i++)</span><br><span class="line">&#123;</span><br><span class="line">for(int j=0;j&lt;=k;j++)</span><br><span class="line">&#123;</span><br><span class="line">int ij=s-i-j;</span><br><span class="line">if(ij&lt;=k &amp;&amp; ij &gt;=0)ans++;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>1234</p><a id="more"></a><p>嘿嘿嘿,做红题的感觉真不错</p><h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h1><p>这道题就是求a+b+c=s有几种等式成立的可能性</p><p>0&lt;=a,b,c&lt;=k</p><p>给定s,k;</p><p>求出方案数.</p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h2 id="暴力n-3"><a href="#暴力n-3" class="headerlink" title="暴力n^3"></a>暴力n^3</h2><p>对,看到是红题就认为暴力n^3能过，然后就凉了…</p><p>下面是代码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int k,s;</span><br><span class="line">    cin&gt;&gt;k&gt;&gt;s;</span><br><span class="line">    int ans=0;</span><br><span class="line">    for(int i=0;i&lt;=k;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int j=0;j&lt;=k;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int ij=0;ij&lt;=k;ij++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(i+j+ij==s)</span><br><span class="line">                &#123;</span><br><span class="line">                    ans++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="n-2-算法"><a href="#n-2-算法" class="headerlink" title="$n^2$算法"></a>$n^2$算法</h2><p>em…</p><p>可以写两个循环求出第3个值。如果第三个值符合要求，则答案++,下面是AC代码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">int k,s;</span><br><span class="line">cin&gt;&gt;k&gt;&gt;s;</span><br><span class="line">int ans=0;</span><br><span class="line">for(int i=0;i&lt;=k;i++)</span><br><span class="line">&#123;</span><br><span class="line">for(int j=0;j&lt;=k;j++)</span><br><span class="line">&#123;</span><br><span class="line">int ij=s-i-j;</span><br><span class="line">if(ij&lt;=k &amp;&amp; ij &gt;=0)ans++;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -107,19 +83,13 @@
     <link href="http://smallfang.tk/2018/12/04/NOIP-PJ-%E7%9C%81%E4%B8%80%E7%A5%AD/"/>
     <id>http://smallfang.tk/2018/12/04/NOIP-PJ-省一祭/</id>
     <published>2018-12-04T10:02:42.000Z</published>
-    <updated>2018-12-04T10:04:20.438Z</updated>
+    <updated>2018-12-11T10:28:59.178Z</updated>
     
-    <content type="html"><![CDATA[<p>开心…</p><p>NOIP 第一次参加就<br><del>一等奖了</del><br><del>198刚好蹭线</del></p><p>嘿嘿嘿</p>]]></content>
+    <content type="html"><![CDATA[<p>1<br><a id="more"></a><br>开心…</p><p>NOIP 第一次参加就<br><del>一等奖了</del><br><del>198刚好蹭线</del></p><p>嘿嘿嘿</p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;开心…&lt;/p&gt;
-&lt;p&gt;NOIP 第一次参加就&lt;br&gt;&lt;del&gt;一等奖了&lt;/del&gt;&lt;br&gt;&lt;del&gt;198刚好蹭线&lt;/del&gt;&lt;/p&gt;
-&lt;p&gt;嘿嘿嘿&lt;/p&gt;
-
-      
+      &lt;p&gt;1&lt;br&gt;
     
     </summary>
     
@@ -133,17 +103,13 @@
     <link href="http://smallfang.tk/2018/12/01/%E9%A2%98%E8%A7%A3-NOIP2018T4%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91/"/>
     <id>http://smallfang.tk/2018/12/01/题解-NOIP2018T4对称二叉树/</id>
     <published>2018-12-01T07:01:46.000Z</published>
-    <updated>2018-12-01T07:03:52.625Z</updated>
+    <updated>2018-12-11T10:10:05.162Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>smallfang noip 考试失利所以得了198,感觉????</p><h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>应该都知道</p><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#define ull unsigned long long</span><br><span class="line">using namespace std;</span><br><span class="line">int ans=1,n,v[1000005],l[1000005],r[10000005]; </span><br><span class="line">struct node&#123;</span><br><span class="line">    int d;</span><br><span class="line">    int t;</span><br><span class="line">    int w;</span><br><span class="line">    node(int da,int ta,int tw)</span><br><span class="line">    &#123;</span><br><span class="line">    d=da;</span><br><span class="line">    t=ta;</span><br><span class="line">    w=tw;</span><br><span class="line">    &#125;</span><br><span class="line">    bool operator==(const node&amp;b)const&#123;return d==b.d&amp;&amp;w==b.w&amp;&amp;t==b.t;&#125;</span><br><span class="line">&#125;; </span><br><span class="line">ull id(int x,int *l1,int *r1,ull h)</span><br><span class="line">&#123;</span><br><span class="line">if(l1[x]&gt;0) h=id(l1[x],l1,r1,h*1009+1);  </span><br><span class="line">if(r1[x]&gt;0) h=id(r1[x],l1,r1,h*1009+2);</span><br><span class="line">return h*1009+v[x];</span><br><span class="line">&#125;</span><br><span class="line">node dfs(int x)</span><br><span class="line">&#123;</span><br><span class="line">    if(x&lt;0)return node(0,0,0);</span><br><span class="line">    node ll=dfs(l[x]);</span><br><span class="line">    node rr=dfs(r[x]);</span><br><span class="line">    if(ll==rr&amp;&amp;l[x]&gt;0&amp;&amp;id(l[x],l,r,0)==id(r[x],r,l,0))</span><br><span class="line">        ans=max(ans,2*ll.t+1);</span><br><span class="line">    return node(max(ll.d,rr.d)+1,ll.t+rr.t+1,ll.w+rr.w+v[x]);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    for(int i=1;i&lt;=n;i++)cin&gt;&gt;v[i];</span><br><span class="line">    for(int i=1;i&lt;=n;i++)cin&gt;&gt;l[i]&gt;&gt;r[i];</span><br><span class="line">    dfs(1);</span><br><span class="line">    cout&lt;&lt;ans;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<p>noip1=198…<br>BJ蹭线</p><a id="more"></a><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>smallfang noip 考试失利所以得了198,感觉????</p><h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><p>应该都知道</p><h1 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#define ull unsigned long long</span><br><span class="line">using namespace std;</span><br><span class="line">int ans=1,n,v[1000005],l[1000005],r[10000005]; </span><br><span class="line">struct node&#123;</span><br><span class="line">    int d;</span><br><span class="line">    int t;</span><br><span class="line">    int w;</span><br><span class="line">    node(int da,int ta,int tw)</span><br><span class="line">    &#123;</span><br><span class="line">    d=da;</span><br><span class="line">    t=ta;</span><br><span class="line">    w=tw;</span><br><span class="line">    &#125;</span><br><span class="line">    bool operator==(const node&amp;b)const&#123;return d==b.d&amp;&amp;w==b.w&amp;&amp;t==b.t;&#125;</span><br><span class="line">&#125;; </span><br><span class="line">ull id(int x,int *l1,int *r1,ull h)</span><br><span class="line">&#123;</span><br><span class="line">if(l1[x]&gt;0) h=id(l1[x],l1,r1,h*1009+1);  </span><br><span class="line">if(r1[x]&gt;0) h=id(r1[x],l1,r1,h*1009+2);</span><br><span class="line">return h*1009+v[x];</span><br><span class="line">&#125;</span><br><span class="line">node dfs(int x)</span><br><span class="line">&#123;</span><br><span class="line">    if(x&lt;0)return node(0,0,0);</span><br><span class="line">    node ll=dfs(l[x]);</span><br><span class="line">    node rr=dfs(r[x]);</span><br><span class="line">    if(ll==rr&amp;&amp;l[x]&gt;0&amp;&amp;id(l[x],l,r,0)==id(r[x],r,l,0))</span><br><span class="line">        ans=max(ans,2*ll.t+1);</span><br><span class="line">    return node(max(ll.d,rr.d)+1,ll.t+rr.t+1,ll.w+rr.w+v[x]);</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    cin&gt;&gt;n;</span><br><span class="line">    for(int i=1;i&lt;=n;i++)cin&gt;&gt;v[i];</span><br><span class="line">    for(int i=1;i&lt;=n;i++)cin&gt;&gt;l[i]&gt;&gt;r[i];</span><br><span class="line">    dfs(1);</span><br><span class="line">    cout&lt;&lt;ans;</span><br><span class="line">    return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;smallfang noip 考试失利所以得了198,感觉????&lt;/p&gt;
-&lt;h1 id=&quot;题目&quot;&gt;&lt;a href=&quot;#题目&quot; class=
-      
+      &lt;p&gt;noip1=198…&lt;br&gt;BJ蹭线&lt;/p&gt;
     
     </summary>
     
@@ -153,80 +119,17 @@
   </entry>
   
   <entry>
-    <title>Blog is closeing!</title>
-    <link href="http://smallfang.tk/2018/11/30/Blog-is-closeing/"/>
-    <id>http://smallfang.tk/2018/11/30/Blog-is-closeing/</id>
-    <published>2018-11-30T10:53:03.000Z</published>
-    <updated>2018-11-30T10:53:03.098Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>一些备忘</title>
     <link href="http://smallfang.tk/2018/11/27/%E4%B8%80%E4%BA%9B%E5%A4%87%E5%BF%98/"/>
     <id>http://smallfang.tk/2018/11/27/一些备忘/</id>
     <published>2018-11-27T14:00:35.000Z</published>
-    <updated>2018-11-30T10:57:21.793Z</updated>
+    <updated>2018-12-11T10:28:57.101Z</updated>
     
-    <content type="html"><![CDATA[<p><a href="https://www.luogu.org/problemnew/lists?name=&amp;orderitem=difficulty&amp;tag=&amp;content=0&amp;type=1%7C13%7C14%7C15%7C16&amp;page=27" target="_blank" rel="noopener">这里</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;a href=&quot;https://www.luogu.org/problemnew/lists?name=&amp;amp;orderitem=difficulty&amp;amp;tag=&amp;amp;content=0&amp;amp;type=1%7C13%7C14%7C15%7C16&amp;amp;
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>你好</title>
-    <link href="http://smallfang.tk/2018/11/26/%E4%BD%A0%E5%A5%BD/"/>
-    <id>http://smallfang.tk/2018/11/26/你好/</id>
-    <published>2018-11-26T12:10:49.000Z</published>
-    <updated>2018-11-26T12:30:42.282Z</updated>
-    
-    <content type="html"><![CDATA[<p>咳咳…</p><p>原来的blog没钱续费就换成了这个….</p><p>好吧…</p>]]></content>
+    <content type="html"><![CDATA[<p>233…<br><a id="more"></a><br><a href="https://www.luogu.org/problemnew/lists?name=&amp;orderitem=difficulty&amp;tag=&amp;content=0&amp;type=1%7C13%7C14%7C15%7C16&amp;page=27" target="_blank" rel="noopener">这里</a></p>]]></content>
     
     <summary type="html">
     
-      
-      
-        &lt;p&gt;咳咳…&lt;/p&gt;
-&lt;p&gt;原来的blog没钱续费就换成了这个….&lt;/p&gt;
-&lt;p&gt;好吧…&lt;/p&gt;
-
-      
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>Hello</title>
-    <link href="http://smallfang.tk/2018/11/26/Hello%20World/"/>
-    <id>http://smallfang.tk/2018/11/26/Hello World/</id>
-    <published>2018-11-26T11:42:56.631Z</published>
-    <updated>2018-11-26T12:13:59.656Z</updated>
-    
-    <content type="html"><![CDATA[<p>原先的博客没钱续费,就转移到这里</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;原先的博客没钱续费,就转移到这里&lt;/p&gt;
-
-      
+      &lt;p&gt;233…&lt;br&gt;
     
     </summary>
     
