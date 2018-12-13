@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[2018.12.12 日记]]></title>
-    <url>%2F2018%2F12%2F12%2F2018-12-12-%E6%97%A5%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[2018.12.12 晚上运动,练习3摇,把自己抽的半死…]]></content>
+    <title><![CDATA[洛谷题解-P1095-守望者的逃离]]></title>
+    <url>%2F2018%2F12%2F13%2F%E6%B4%9B%E8%B0%B7%E9%A2%98%E8%A7%A3-P1095-%E5%AE%88%E6%9C%9B%E8%80%85%E7%9A%84%E9%80%83%E7%A6%BB%2F</url>
+    <content type="text"><![CDATA[一篇题解 敬请期待…]]></content>
+      <categories>
+        <category>洛谷题解</category>
+      </categories>
       <tags>
-        <tag>日记</tag>
+        <tag>dp</tag>
       </tags>
   </entry>
   <entry>
@@ -29,7 +32,7 @@
     <url>%2F2018%2F12%2F06%2F%E6%B4%9B%E8%B0%B7%E9%A2%98%E8%A7%A3-AT2281-Sum-of-Three-Integers%2F</url>
     <content type="text"><![CDATA[1234 嘿嘿嘿,做红题的感觉真不错 题目大意这道题就是求a+b+c=s有几种等式成立的可能性 0&lt;=a,b,c&lt;=k 给定s,k; 求出方案数. 思路暴力n^3对,看到是红题就认为暴力n^3能过，然后就凉了… 下面是代码 12345678910111213141516171819202122#include &lt;iostream&gt;using namespace std;int main()&#123; int k,s; cin&gt;&gt;k&gt;&gt;s; int ans=0; for(int i=0;i&lt;=k;i++) &#123; for(int j=0;j&lt;=k;j++) &#123; for(int ij=0;ij&lt;=k;ij++) &#123; if(i+j+ij==s) &#123; ans++; &#125; &#125; &#125; &#125; cout&lt;&lt;ans&lt;&lt;endl;&#125; $n^2$算法em… 可以写两个循环求出第3个值。如果第三个值符合要求，则答案++,下面是AC代码 12345678910111213141516171819#include &lt;iostream&gt;using namespace std;int main()&#123; int k,s; cin&gt;&gt;k&gt;&gt;s; int ans=0; for(int i=0;i&lt;=k;i++) &#123; for(int j=0;j&lt;=k;j++) &#123; int ij=s-i-j; if(ij&lt;=k &amp;&amp; ij &gt;=0)ans++; &#125; &#125; cout&lt;&lt;ans&lt;&lt;endl;&#125;]]></content>
       <categories>
-        <category>123</category>
+        <category>洛谷题解</category>
       </categories>
       <tags>
         <tag>题解</tag>
@@ -55,5 +58,20 @@
     <title><![CDATA[一些备忘]]></title>
     <url>%2F2018%2F11%2F27%2F%E4%B8%80%E4%BA%9B%E5%A4%87%E5%BF%98%2F</url>
     <content type="text"><![CDATA[233…这里]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[archives]]></title>
+    <url>%2Farchives%2Findex.html</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[categories]]></title>
+    <url>%2Fcategories%2Findex.html</url>
+    <content type="text"></content>
+  </entry>
+  <entry>
+    <title><![CDATA[tags]]></title>
+    <url>%2Ftags%2Findex.html</url>
+    <content type="text"></content>
   </entry>
 </search>

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://smallfang.tk/"/>
-  <updated>2018-12-12T13:59:48.054Z</updated>
+  <updated>2018-12-13T14:11:40.244Z</updated>
   <id>http://smallfang.tk/</id>
   
   <author>
@@ -17,22 +17,24 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>2018.12.12 日记</title>
-    <link href="http://smallfang.tk/2018/12/12/2018-12-12-%E6%97%A5%E8%AE%B0/"/>
-    <id>http://smallfang.tk/2018/12/12/2018-12-12-日记/</id>
-    <published>2018-12-12T13:55:09.000Z</published>
-    <updated>2018-12-12T13:59:48.054Z</updated>
+    <title>洛谷题解-P1095-守望者的逃离</title>
+    <link href="http://smallfang.tk/2018/12/13/%E6%B4%9B%E8%B0%B7%E9%A2%98%E8%A7%A3-P1095-%E5%AE%88%E6%9C%9B%E8%80%85%E7%9A%84%E9%80%83%E7%A6%BB/"/>
+    <id>http://smallfang.tk/2018/12/13/洛谷题解-P1095-守望者的逃离/</id>
+    <published>2018-12-13T14:09:41.000Z</published>
+    <updated>2018-12-13T14:11:40.244Z</updated>
     
-    <content type="html"><![CDATA[<p>2018.12.12</p><a id="more"></a><p>晚上运动,练习3摇,把自己抽的半死…</p>]]></content>
+    <content type="html"><![CDATA[<p>一篇题解</p><a id="more"></a><p>敬请期待…</p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;2018.12.12&lt;/p&gt;
+      &lt;p&gt;一篇题解&lt;/p&gt;
     
     </summary>
     
+      <category term="洛谷题解" scheme="http://smallfang.tk/categories/%E6%B4%9B%E8%B0%B7%E9%A2%98%E8%A7%A3/"/>
     
-      <category term="日记" scheme="http://smallfang.tk/tags/%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="dp" scheme="http://smallfang.tk/tags/dp/"/>
     
   </entry>
   
@@ -81,7 +83,7 @@
     <link href="http://smallfang.tk/2018/12/06/%E6%B4%9B%E8%B0%B7%E9%A2%98%E8%A7%A3-AT2281-Sum-of-Three-Integers/"/>
     <id>http://smallfang.tk/2018/12/06/洛谷题解-AT2281-Sum-of-Three-Integers/</id>
     <published>2018-12-06T12:25:07.000Z</published>
-    <updated>2018-12-11T10:08:32.931Z</updated>
+    <updated>2018-12-13T14:08:29.951Z</updated>
     
     <content type="html"><![CDATA[<p>1234</p><a id="more"></a><p>嘿嘿嘿,做红题的感觉真不错</p><h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h1><p>这道题就是求a+b+c=s有几种等式成立的可能性</p><p>0&lt;=a,b,c&lt;=k</p><p>给定s,k;</p><p>求出方案数.</p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h2 id="暴力n-3"><a href="#暴力n-3" class="headerlink" title="暴力n^3"></a>暴力n^3</h2><p>对,看到是红题就认为暴力n^3能过，然后就凉了…</p><p>下面是代码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int k,s;</span><br><span class="line">    cin&gt;&gt;k&gt;&gt;s;</span><br><span class="line">    int ans=0;</span><br><span class="line">    for(int i=0;i&lt;=k;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int j=0;j&lt;=k;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int ij=0;ij&lt;=k;ij++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(i+j+ij==s)</span><br><span class="line">                &#123;</span><br><span class="line">                    ans++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="n-2-算法"><a href="#n-2-算法" class="headerlink" title="$n^2$算法"></a>$n^2$算法</h2><p>em…</p><p>可以写两个循环求出第3个值。如果第三个值符合要求，则答案++,下面是AC代码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">int k,s;</span><br><span class="line">cin&gt;&gt;k&gt;&gt;s;</span><br><span class="line">int ans=0;</span><br><span class="line">for(int i=0;i&lt;=k;i++)</span><br><span class="line">&#123;</span><br><span class="line">for(int j=0;j&lt;=k;j++)</span><br><span class="line">&#123;</span><br><span class="line">int ij=s-i-j;</span><br><span class="line">if(ij&lt;=k &amp;&amp; ij &gt;=0)ans++;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
     
@@ -91,7 +93,7 @@
     
     </summary>
     
-      <category term="123" scheme="http://smallfang.tk/categories/123/"/>
+      <category term="洛谷题解" scheme="http://smallfang.tk/categories/%E6%B4%9B%E8%B0%B7%E9%A2%98%E8%A7%A3/"/>
     
     
       <category term="题解" scheme="http://smallfang.tk/tags/%E9%A2%98%E8%A7%A3/"/>
