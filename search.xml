@@ -19,7 +19,7 @@
   <entry>
     <title><![CDATA[博客更新说明]]></title>
     <url>%2F2018%2F12%2F08%2F%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E8%AF%B4%E6%98%8E%2F</url>
-    <content type="text"><![CDATA[v0.2.1 V0.2.1 增加:评论功能 V0.1.5 减去:无法使用的评论功能 V0.1.0 基础]]></content>
+    <content type="text"><![CDATA[v0.2.2 V0.2.2 +:search-try V0.2.1 +:评论功能 V0.1.5 -:无法使用的评论功能 V0.1.0 基础]]></content>
       <tags>
         <tag>hexo</tag>
       </tags>
