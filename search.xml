@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[杂谈并查集]]></title>
+    <url>%2F2018%2F12%2F15%2F%E6%9D%82%E8%B0%88%E5%B9%B6%E6%9F%A5%E9%9B%86%2F</url>
+    <content type="text"><![CDATA[并查集…. 让我们先看一看百度百科中对并查集的描述. 并查集，在一些有N个元素的集合应用问题中，我们通常是在开始时让每个元素构成一个单元素的集合，然后按一定顺序将属于同一组的元素所在的集合合并，其间要反复查找一个元素在哪个集合中。这一类问题近几年来反复出现在信息学的国际国内赛题中，其特点是看似并不复杂，但数据量极大，若用正常的数据结构来描述的话，往往在空间上过大，计算机无法承受；即使在空间上勉强通过，运行的时间复杂度也极高，根本就不可能在比赛规定的运行时间（1～3秒）内计算出试题需要的结果，只能用并查集来描述。并查集是一种树型的数据结构，用于处理一些不相交集合（Disjoint Sets）的合并及查询问题。常常在使用中以森林来表示。 em…. 实践题目-公交车题目描述D市有n个公交车站和m条公交线路，公交车站的编号为从1到n 。每条公交线路会经过某些车站，如果两条公交线路有公共的公交车站，那么它们可以在公共车站相互换乘。比如线路（1,2,3,9）和线路（2,4,5,7,9）可以在2号车站或9号车站相互换乘。 从一个公交车站出发，乘客可以选择经过此站的任意公交线路运往线路上任意其他车站，还可以在下车后换乘其他线路到达其他车站，然后可以继续换乘…… 小红想知道在所有n*(n-1)/2对公交车站中，有多少对是相互不可达的？ 输入格式文件的第一行是两个正整数n、m（2≤n≤100，1≤m≤1000）。 接下来m行，每行首先是一个整数ci（2≤ci≤n），接下来是ci个大小在1到n之间的互不相同的整数，表示一条公交线路。 输出格式文件仅一行，是一个整数，表示有多少对相互不可达的公交车站。 并查集解法1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859/*For www.smallfang.tk*/#include &lt;iostream&gt;#include &lt;cstring&gt;using namespace std;int p[108];int root(int x) //判断该子节点距离根节点的距离&#123; if(p[x]&lt;0)return x; return p[x]=root(p[x]);&#125;void Merge(int x,int y)//认师父&#123; int u=root(x); int v=root(y); if(u!=v) &#123; if(p[u]&lt;p[v]) &#123; p[u]=p[u]+p[v]; p[v]=u; &#125; else &#123; p[v]=p[v]+p[u]; p[u]=v; &#125; &#125;&#125;int main()&#123; memset(p,-1,404);//设本来自己就是老大(根节点) int n,m; cin&gt;&gt;n&gt;&gt;m; for(int i=1;i&lt;=m;++i) &#123; int k,x; cin&gt;&gt;k&gt;&gt;x; int y; for(int j=1;j&lt;k;j++) &#123; cin&gt;&gt;y; Merge(x,y); &#125; &#125; int ans=0; for(int i=1;i&lt;=n;i++) &#123; if(p[i]&lt;0) &#123; ans+=p[i]*(p[i]+1)/2; &#125; &#125; ans=(n*(n-1))/2-ans; cout&lt;&lt;ans; return 0;&#125;]]></content>
+      <tags>
+        <tag>并查集</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[洛谷题解-P2058-海港]]></title>
     <url>%2F2018%2F12%2F14%2F%E6%B4%9B%E8%B0%B7%E9%A2%98%E8%A7%A3-P2058-%E6%B5%B7%E6%B8%AF%2F</url>
     <content type="text"><![CDATA[LG - P2058 - 海港 题目这里 思路部分这道题乍一看是一道大难题大模拟 1 维护一个队列(不使用库函数) 叫做dl dl[i].ti意思是第i个人在什么时候到达 dl[i].ni意思是第i个人的国籍 2 输入国籍，定义pep,统计该国籍有没有人，如果没有那么ans++,并且pep[tmp]++; 3 由于给定条件保证数据递增,所以就保证此时的队列是一个单调递增的。然后定义e=0,这样从队头扫到元素时间与该此到达时间差小于86400（不等于）如果不满足则e++并且删掉一个改国籍的人,如果该国籍此时没有人那么ans–; 代码部分12345678910111213141516171819202122232425262728293031323334353637383940#include &lt;iostream&gt;using namespace std;struct node&#123; int ti,na;&#125;dl[400000];int ans=0;int pep[400000];int main()&#123; int n; cin&gt;&gt;n; int t,k,c=0; int e=1; for(int i=1;i&lt;=n;i++) &#123; cin&gt;&gt;t&gt;&gt;k; int tmp; for(int i=k;i&gt;=1;i--) &#123; cin&gt;&gt;tmp; dl[c+1].ti=t; dl[++c].na=tmp; if(!pep[tmp]) &#123; ans++; &#125; pep[tmp]++; &#125; while(t-dl[e].ti&gt;=86400) &#123; if(!--pep[dl[e++].na]) ans--; &#125; cout&lt;&lt;ans&lt;&lt;endl; &#125; return 0;&#125; 题解终于写完了]]></content>
