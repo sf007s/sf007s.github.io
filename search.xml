@@ -1,11 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[pictrue]]></title>
-    <url>%2F2018%2F12%2F15%2Fpictrue%2F</url>
-    <content type="text"><![CDATA[2333]]></content>
-  </entry>
-  <entry>
     <title><![CDATA[洛谷题解-P2058-海港]]></title>
     <url>%2F2018%2F12%2F14%2F%E6%B4%9B%E8%B0%B7%E9%A2%98%E8%A7%A3-P2058-%E6%B5%B7%E6%B8%AF%2F</url>
     <content type="text"><![CDATA[LG - P2058 - 海港 题目这里 思路部分这道题乍一看是一道大难题大模拟 1 维护一个队列(不使用库函数) 叫做dl dl[i].ti意思是第i个人在什么时候到达 dl[i].ni意思是第i个人的国籍 2 输入国籍，定义pep,统计该国籍有没有人，如果没有那么ans++,并且pep[tmp]++; 3 由于给定条件保证数据递增,所以就保证此时的队列是一个单调递增的。然后定义e=0,这样从队头扫到元素时间与该此到达时间差小于86400（不等于）如果不满足则e++并且删掉一个改国籍的人,如果该国籍此时没有人那么ans–; 代码部分12345678910111213141516171819202122232425262728293031323334353637383940#include &lt;iostream&gt;using namespace std;struct node&#123; int ti,na;&#125;dl[400000];int ans=0;int pep[400000];int main()&#123; int n; cin&gt;&gt;n; int t,k,c=0; int e=1; for(int i=1;i&lt;=n;i++) &#123; cin&gt;&gt;t&gt;&gt;k; int tmp; for(int i=k;i&gt;=1;i--) &#123; cin&gt;&gt;tmp; dl[c+1].ti=t; dl[++c].na=tmp; if(!pep[tmp]) &#123; ans++; &#125; pep[tmp]++; &#125; while(t-dl[e].ti&gt;=86400) &#123; if(!--pep[dl[e++].na]) ans--; &#125; cout&lt;&lt;ans&lt;&lt;endl; &#125; return 0;&#125; 题解终于写完了]]></content>
