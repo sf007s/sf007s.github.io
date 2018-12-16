@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://smallfang.tk/"/>
-  <updated>2018-12-15T14:06:06.907Z</updated>
+  <updated>2018-12-14T14:36:09.724Z</updated>
   <id>http://smallfang.tk/</id>
   
   <author>
@@ -15,26 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>杂谈并查集</title>
-    <link href="http://smallfang.tk/2018/12/15/%E6%9D%82%E8%B0%88%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
-    <id>http://smallfang.tk/2018/12/15/杂谈并查集/</id>
-    <published>2018-12-15T13:51:30.000Z</published>
-    <updated>2018-12-15T14:06:06.907Z</updated>
-    
-    <content type="html"><![CDATA[<p>并查集….</p><a id="more"></a><p>让我们先看一看<del>百度百科</del>中对并查集的描述.</p><p>并查集，在一些有N个元素的集合应用问题中，我们通常是在开始时让每个元素构成一个单元素的集合，然后按一定顺序将属于同一组的元素所在的集合合并，其间要反复查找一个元素在哪个集合中。这一类问题近几年来反复出现在信息学的国际国内赛题中，其特点是看似并不复杂，但数据量极大，若用正常的数据结构来描述的话，往往在空间上过大，计算机无法承受；即使在空间上勉强通过，运行的时间复杂度也极高，根本就不可能在比赛规定的运行时间（1～3秒）内计算出试题需要的结果，只能用并查集来描述。<br>并查集是一种树型的数据结构，用于处理一些不相交集合（Disjoint Sets）的合并及查询问题。常常在使用中以森林来表示。</p><p>em….</p><h1 id="实践题目-公交车"><a href="#实践题目-公交车" class="headerlink" title="实践题目-公交车"></a>实践题目-公交车</h1><h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>D市有n个公交车站和m条公交线路，公交车站的编号为从1到n 。每条公交线路会经过某些车站，如果两条公交线路有公共的公交车站，那么它们可以在公共车站相互换乘。比如线路（1,2,3,9）和线路（2,4,5,7,9）可以在2号车站或9号车站相互换乘。</p><p>从一个公交车站出发，乘客可以选择经过此站的任意公交线路运往线路上任意其他车站，还可以在下车后换乘其他线路到达其他车站，然后可以继续换乘……</p><p>小红想知道在所有n*(n-1)/2对公交车站中，有多少对是相互不可达的？</p><h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>文件的第一行是两个正整数n、m（2≤n≤100，1≤m≤1000）。</p><p>接下来m行，每行首先是一个整数ci（2≤ci≤n），接下来是ci个大小在1到n之间的互不相同的整数，表示一条公交线路。</p><h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>文件仅一行，是一个整数，表示有多少对相互不可达的公交车站。</p><h1 id="并查集解法"><a href="#并查集解法" class="headerlink" title="并查集解法"></a>并查集解法</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">For www.smallfang.tk</span><br><span class="line">*/</span><br><span class="line">#include &lt;iostream&gt;</span><br><span class="line">#include &lt;cstring&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int p[108];</span><br><span class="line">int root(int x) //判断该子节点距离根节点的距离</span><br><span class="line">&#123;</span><br><span class="line">if(p[x]&lt;0)return x;</span><br><span class="line">return p[x]=root(p[x]);</span><br><span class="line">&#125;</span><br><span class="line">void Merge(int x,int y)//认师父</span><br><span class="line">&#123;</span><br><span class="line">int u=root(x);</span><br><span class="line">int v=root(y);</span><br><span class="line">if(u!=v)</span><br><span class="line">&#123;</span><br><span class="line">if(p[u]&lt;p[v])</span><br><span class="line">&#123;</span><br><span class="line">p[u]=p[u]+p[v];</span><br><span class="line">p[v]=u;</span><br><span class="line">&#125;</span><br><span class="line">else</span><br><span class="line">&#123;</span><br><span class="line">p[v]=p[v]+p[u];</span><br><span class="line">p[u]=v;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">memset(p,-1,404);//设本来自己就是老大(根节点)</span><br><span class="line">int n,m;</span><br><span class="line">cin&gt;&gt;n&gt;&gt;m;</span><br><span class="line">for(int i=1;i&lt;=m;++i)</span><br><span class="line">&#123;</span><br><span class="line">int k,x;</span><br><span class="line">cin&gt;&gt;k&gt;&gt;x;</span><br><span class="line">int y;</span><br><span class="line">for(int j=1;j&lt;k;j++)</span><br><span class="line">&#123;</span><br><span class="line">cin&gt;&gt;y;</span><br><span class="line">Merge(x,y);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">int ans=0;</span><br><span class="line">for(int i=1;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line">if(p[i]&lt;0)</span><br><span class="line">&#123;</span><br><span class="line">ans+=p[i]*(p[i]+1)/2; </span><br><span class="line">&#125; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">ans=(n*(n-1))/2-ans;</span><br><span class="line">cout&lt;&lt;ans;</span><br><span class="line">return 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;并查集….&lt;/p&gt;
-    
-    </summary>
-    
-    
-      <category term="并查集" scheme="http://smallfang.tk/tags/%E5%B9%B6%E6%9F%A5%E9%9B%86/"/>
-    
-  </entry>
   
   <entry>
     <title>洛谷题解-P2058-海港</title>
