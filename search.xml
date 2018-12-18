@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[各类奇葩模板]]></title>
+    <url>%2F2018%2F12%2F18%2F%E5%90%84%E7%B1%BB%E5%A5%87%E8%91%A9%E6%A8%A1%E6%9D%BF%2F</url>
+    <content type="text"><![CDATA[各类模子,希望各位dalao赞助(￣▽￣)~*(｀・ω・´)以下为各类模板(持续更新) 快速幂1234567int qpow(long long x,long long y)&#123; if(y==1)return x%c; long long t=qpow(x,y/2); if(y%2&gt;0)return t*t*x%c; else return t*t%c;&#125; 并查集123456789101112131415161718192021222324252627282930int root(int x)//找根 &#123; if(p[x]&lt;0)return x;//如果找到根了 return p[x]=root(p[x]);//非常精巧边找根边将自己设为根的儿子 &#125;void Merge(int x,int y)//将x的和y合并 &#123; int u=root(x);//追溯到x的根 int v=root(y);//追溯到y的根 if(u!=v)//如果两人的根不相等 &#123; if(u&lt;v) &#123; p[u]=p[u]+p[v]; p[v]=u; &#125; else &#123; p[v]=p[v]+p[u]; p[u]=v; &#125; &#125; &#125;bool findg(int x,int y)//如果x和y属于同一个图 &#123; int u=root(x);//追溯到x的根 int v=root(y);//追溯到y的根 if(u==v)return true;//如果x和y属于同一个图 else return false;//否则返回不为同一个根 &#125;]]></content>
+      <tags>
+        <tag>模板</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[“杂谈系列-杂谈并查集”]]></title>
     <url>%2F2018%2F12%2F17%2F%E2%80%9C%E6%9D%82%E8%B0%88%E7%B3%BB%E5%88%97-%E6%9D%82%E8%B0%88%E5%B9%B6%E6%9F%A5%E9%9B%86%E2%80%9D%2F</url>
     <content type="text"><![CDATA[Hi,这里是被dalao灭掉的smallfang. 今天蒟蒻smallfang就来谈一谈并查集… 在这个信息多么发达的社会我们就应该上网查一查并查集是些什么: （以下来自度娘百科） 概念并查集，在一些有N个元素的集合应用问题中，我们通常是在开始时让每个元素构成一个单元素的集合，然后按一定顺序将属于同一组的元素所在的集合合并，其间要反复查找一个元素在哪个集合中。这一类问题近几年来反复出现在信息学的国际国内赛题中，其特点是看似并不复杂，但数据量极大，若用正常的数据结构来描述的话，往往在空间上过大，计算机无法承受；即使在空间上勉强通过，运行的时间复杂度也极高，根本就不可能在比赛规定的运行时间（1～3秒）内计算出试题需要的结果，只能用并查集来描述。其中粗体字要注意.因为比较重要… 上面的内容大概意思是不使用并查集会超时的题必须使用并查集否则解决不了 例题裸体（模板） 代码1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556#include &lt;iostream&gt;//基础头文件#include &lt;cstring&gt;//memesetusing namespace std;int p[200001];//邻接表 int root(int x)//找根 &#123; if(p[x]&lt;0)return x;//如果找到根了 return p[x]=root(p[x]);//非常精巧边找根边将自己设为根的儿子 &#125;void Merge(int x,int y)//将x的和y合并 &#123; int u=root(x);//追溯到x的根 int v=root(y);//追溯到y的根 if(u!=v)//如果两人的根不相等 &#123; if(u&lt;v) &#123; p[u]=p[u]+p[v]; p[v]=u; &#125; else &#123; p[v]=p[v]+p[u]; p[u]=v; &#125; &#125; &#125;bool findg(int x,int y)//如果x和y属于同一个图 &#123; int u=root(x);//追溯到x的根 int v=root(y);//追溯到y的根 if(u==v)return true;//如果x和y属于同一个图 else return false;//否则返回不为同一个根 &#125;int main()&#123; memset(p,-1,400004);//-1代表是大哥(根) int n,m; cin&gt;&gt;n&gt;&gt;m; for(int i=1;i&lt;=m;i++) &#123; int z,x,y; cin&gt;&gt;z&gt;&gt;x&gt;&gt;y; if(z==2) &#123; if(findg(x,y))cout&lt;&lt;"Y"; else cout&lt;&lt;"N"; cout&lt;&lt;endl; &#125; if(z==1) &#123; Merge(x,y);//拼接x,y; &#125; &#125; return 0; &#125; 推荐题目 这里除了第一题之外的所有题全部可以按顺序做 the end]]></content>
@@ -70,10 +78,5 @@
       <tags>
         <tag>题解</tag>
       </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[一些备忘]]></title>
-    <url>%2F2018%2F11%2F27%2F%E4%B8%80%E4%BA%9B%E5%A4%87%E5%BF%98%2F</url>
-    <content type="text"><![CDATA[233…这里]]></content>
   </entry>
 </search>
