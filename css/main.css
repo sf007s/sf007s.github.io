@@ -1,3 +1,13 @@
+.a {
+  margin: 0 auto;
+  background: #008b8b;
+  width: 200px;
+  height: 200px;
+  border: 2px solid #2f4f4f;
+  border-radius: 30px;
+  text-align: center;
+  line-height: 200px;
+}
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif; /* 1 */
@@ -1928,7 +1938,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #4affff;
+  background: #28d4c2;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3042,4 +3052,10 @@ hr {
   padding: 25px;
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+}
+* {
+  cursor: url("/img/hua.ico"), auto !important;
+}
+:active {
+  cursor: url("/img/anxia.ico"), auto !important;
 }
