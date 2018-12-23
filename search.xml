@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[杂谈并查集]]></title>
+    <url>%2F2018%2F12%2F23%2F%E6%9D%82%E8%B0%88%E5%B9%B6%E6%9F%A5%E9%9B%86%2F</url>
+    <content type="text"><![CDATA[并查集. 前置技能1.图与树的基础概念与存储方式(并查集主要运用邻接表储存关系) 概念从一个简单的例子解释:有一天cz zc kkk him mih yp py yh hy 这一群江湖人士要开始选大哥了首先他们的关系网是这样的(其中星星代表代表老大)后来组委会决定留下三位大哥然后yp和py决定要合并然后发现py实力太弱,py拜yp为师,cz和zc决定合并后zc输了然后zc拜cz为师,现在是此时的关系网现在还剩下7位大哥然后cz要和kkk合并,cz的弟子比kkk的弟子多所以cz为师傅,然后,hy想拜zc为师傅然后发现hy实力太弱就拜了zc为师傅,此时的关系网是后来mih和him都来拜py为徒弟然后就是这样上面的操作就叫做并查集 代码实现方案合并就是将两个合并为一个不难理解,以下为伪代码:123456void Merge(int x,int y)&#123; 获得x的根,y的根; 如果两个根不属于一个祖先则合并 将x的父亲设为y&#125; 一份合格的代码:12345678void Merge(int x,int y)&#123; int u=root(x),v=root(y);//查询x的根和y的根 if(u!=v)//如果根不同 &#123; p[u]=v;//p代表的是邻接表,p[i]表示的是i的父亲的位置 &#125;&#125; 代码中出现了寻根的函数,这个函数我们可以写成递归函数以下12345int root(int x)&#123; if(x==0)return x; else return root(p[x]);&#125; 这份代码虽然没有问题但是并不是最优的解法.因为其中如果出现了类似于上面图4中yp的弟子一样，弟子传弟子..然后我们可能会想到我把p[i]设为自己的祖先不就行了.这个方案看着可行，但是有一点如果我的师傅被打败了怎么办类似于cz把yp打败了这是py的师傅还是yp并不是新师傅cz,但是这种想法给我们优化带来一些灵感，就有了以下的优化方式 路径压缩什么是路径压缩路径压缩就是将将孙子设为儿子，将所有孙子的儿子设为儿子,只到没有儿子的出现。这个时候最简单的方法是更改一下找根函数,边找边压缩.实现方案:12345int root(int x)&#123; if(x==0)return x; else return p[x]=root(p[x]);&#125; 大概就是酱紫 最后还有一点有些题问根的深度我们可以将师傅设为负数并且越小徒弟越多表示方法:10个徒弟 -1012个徒弟 -12...等等等等 https://blog.smallfang.tk/2018/12/18/各类奇葩模板/ thanks for your watching! the end]]></content>
+      <tags>
+        <tag>并查集</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[各类奇葩模板]]></title>
     <url>%2F2018%2F12%2F18%2F%E5%90%84%E7%B1%BB%E5%A5%87%E8%91%A9%E6%A8%A1%E6%9D%BF%2F</url>
     <content type="text"><![CDATA[各类模子,希望各位dalao赞助(￣▽￣)~*(｀・ω・´)以下为各类模板(持续更新) 快速幂1234567int qpow(long long x,long long y)&#123; if(y==1)return x%c; long long t=qpow(x,y/2); if(y%2&gt;0)return t*t*x%c; else return t*t%c;&#125; 并查集123456789101112131415161718192021222324252627282930int root(int x)//找根 &#123; if(p[x]&lt;0)return x;//如果找到根了 return p[x]=root(p[x]);//非常精巧边找根边将自己设为根的儿子 &#125;void Merge(int x,int y)//将x的和y合并 &#123; int u=root(x);//追溯到x的根 int v=root(y);//追溯到y的根 if(u!=v)//如果两人的根不相等 &#123; if(u&lt;v) &#123; p[u]=p[u]+p[v]; p[v]=u; &#125; else &#123; p[v]=p[v]+p[u]; p[u]=v; &#125; &#125; &#125;bool findg(int x,int y)//如果x和y属于同一个图 &#123; int u=root(x);//追溯到x的根 int v=root(y);//追溯到y的根 if(u==v)return true;//如果x和y属于同一个图 else return false;//否则返回不为同一个根 &#125; 线性筛素数1234567891011121314void prime(int n)&#123; for(int i=2;i&lt;=n;i++)ip[i]=1; for(int i=2;i&lt;=n;i++) &#123; if(ip[i]) &#123; for(int j=2*i;j&lt;=n;j=j+i) &#123; ip[j] = false; &#125; &#125; &#125;&#125;]]></content>
@@ -58,17 +66,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[NOIP PJ 省一祭]]></title>
-    <url>%2F2018%2F12%2F04%2FNOIP-PJ-%E7%9C%81%E4%B8%80%E7%A5%AD%2F</url>
-    <content type="text"><![CDATA[1开心… NOIP 第一次参加就一等奖了198刚好蹭线 嘿嘿嘿]]></content>
-      <tags>
-        <tag>其他</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[题解-NOIP2018T4对称二叉树]]></title>
     <url>%2F2018%2F12%2F01%2F%E9%A2%98%E8%A7%A3-NOIP2018T4%E5%AF%B9%E7%A7%B0%E4%BA%8C%E5%8F%89%E6%A0%91%2F</url>
-    <content type="text"><![CDATA[noip1=198…BJ蹭线 前言smallfang noip 考试失利所以得了198,感觉???? 题目应该都知道 代码12345678910111213141516171819202122232425262728293031323334353637383940#include &lt;iostream&gt;#define ull unsigned long longusing namespace std;int ans=1,n,v[1000005],l[1000005],r[10000005]; struct node&#123; int d; int t; int w; node(int da,int ta,int tw) &#123; d=da; t=ta; w=tw; &#125; bool operator==(const node&amp;b)const&#123;return d==b.d&amp;&amp;w==b.w&amp;&amp;t==b.t;&#125;&#125;; ull id(int x,int *l1,int *r1,ull h)&#123;if(l1[x]&gt;0) h=id(l1[x],l1,r1,h*1009+1); if(r1[x]&gt;0) h=id(r1[x],l1,r1,h*1009+2);return h*1009+v[x];&#125;node dfs(int x)&#123; if(x&lt;0)return node(0,0,0); node ll=dfs(l[x]); node rr=dfs(r[x]); if(ll==rr&amp;&amp;l[x]&gt;0&amp;&amp;id(l[x],l,r,0)==id(r[x],r,l,0)) ans=max(ans,2*ll.t+1); return node(max(ll.d,rr.d)+1,ll.t+rr.t+1,ll.w+rr.w+v[x]);&#125;int main()&#123; cin&gt;&gt;n; for(int i=1;i&lt;=n;i++)cin&gt;&gt;v[i]; for(int i=1;i&lt;=n;i++)cin&gt;&gt;l[i]&gt;&gt;r[i]; dfs(1); cout&lt;&lt;ans; return 0; &#125;]]></content>
+    <content type="text"><![CDATA[2333 题目应该都知道 代码12345678910111213141516171819202122232425262728293031323334353637383940#include &lt;iostream&gt;#define ull unsigned long longusing namespace std;int ans=1,n,v[1000005],l[1000005],r[10000005]; struct node&#123; int d; int t; int w; node(int da,int ta,int tw) &#123; d=da; t=ta; w=tw; &#125; bool operator==(const node&amp;b)const&#123;return d==b.d&amp;&amp;w==b.w&amp;&amp;t==b.t;&#125;&#125;; ull id(int x,int *l1,int *r1,ull h)&#123;if(l1[x]&gt;0) h=id(l1[x],l1,r1,h*1009+1); if(r1[x]&gt;0) h=id(r1[x],l1,r1,h*1009+2);return h*1009+v[x];&#125;node dfs(int x)&#123; if(x&lt;0)return node(0,0,0); node ll=dfs(l[x]); node rr=dfs(r[x]); if(ll==rr&amp;&amp;l[x]&gt;0&amp;&amp;id(l[x],l,r,0)==id(r[x],r,l,0)) ans=max(ans,2*ll.t+1); return node(max(ll.d,rr.d)+1,ll.t+rr.t+1,ll.w+rr.w+v[x]);&#125;int main()&#123; cin&gt;&gt;n; for(int i=1;i&lt;=n;i++)cin&gt;&gt;v[i]; for(int i=1;i&lt;=n;i++)cin&gt;&gt;l[i]&gt;&gt;r[i]; dfs(1); cout&lt;&lt;ans; return 0; &#125;]]></content>
       <tags>
         <tag>题解</tag>
       </tags>
