@@ -1,0 +1,1206 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+<link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+
+<style>
+    .pace .pace-progress {
+        background: #1E92FB; /*进度条颜色*/
+        height: 3px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #1E92FB; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #1E92FB;    /*上边框颜色*/
+        border-left-color: #1E92FB;    /*左边框颜色*/
+    }
+</style>
+
+<script>
+    (function () {
+        if ('') {
+            if (prompt('请输入文章密码') !== '') {
+                alert('密码错误！');
+                if (history.length === 1) {
+                    location.replace("http://blog.smallfang.tk"); // 这里替换成你的首页
+                } else {
+                    history.back();
+                }
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, smallfang">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="smallfang" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="感觉自己好渺小">
+<meta property="og:type" content="article">
+<meta property="og:title" content="算法统计">
+<meta property="og:url" content="http://smallfang.tk/2018/12/25/算法统计/index.html">
+<meta property="og:site_name" content="smallfang">
+<meta property="og:description" content="感觉自己好渺小">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-25T12:09:15.544Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="算法统计">
+<meta name="twitter:description" content="感觉自己好渺小">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://smallfang.tk/2018/12/25/算法统计/">
+
+
+
+
+
+  <title>算法统计 | smallfang</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">smallfang</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://smallfang.tk/2018/12/25/算法统计/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="smallfang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="smallfang">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">算法统计</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-25T20:07:09+08:00">
+                2018-12-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/12/25/算法统计/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/25/算法统计/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  531
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>感觉自己好渺小<br><a id="more"></a></p>
+<h1 id="线性结构-9-3"><a href="#线性结构-9-3" class="headerlink" title="线性结构 9/3"></a>线性结构 9/3</h1><h2 id="莫队"><a href="#莫队" class="headerlink" title="莫队"></a>莫队</h2><h2 id="前缀和"><a href="#前缀和" class="headerlink" title="前缀和"></a>前缀和</h2><h2 id="数组-√"><a href="#数组-√" class="headerlink" title="数组 √"></a>数组 √</h2><h2 id="栈-√"><a href="#栈-√" class="headerlink" title="栈 √"></a>栈 √</h2><h2 id="队列-√"><a href="#队列-√" class="headerlink" title="队列 √"></a>队列 √</h2><h2 id="块状链表-块状数组-分块"><a href="#块状链表-块状数组-分块" class="headerlink" title="块状链表,块状数组,分块"></a>块状链表,块状数组,分块</h2><h2 id="st表-稀疏表"><a href="#st表-稀疏表" class="headerlink" title="st表,稀疏表"></a>st表,稀疏表</h2><h2 id="差分"><a href="#差分" class="headerlink" title="差分"></a>差分</h2><hr>
+<h1 id="网络流-11-0"><a href="#网络流-11-0" class="headerlink" title="网络流 11/0"></a>网络流 11/0</h1><h2 id="最大流-3-0"><a href="#最大流-3-0" class="headerlink" title="最大流 3/0"></a>最大流 3/0</h2><h3 id="Dinic"><a href="#Dinic" class="headerlink" title="Dinic"></a>Dinic</h3><h3 id="Sap"><a href="#Sap" class="headerlink" title="Sap"></a>Sap</h3><h3 id="有上下界的最大流"><a href="#有上下界的最大流" class="headerlink" title="有上下界的最大流"></a>有上下界的最大流</h3><h2 id="最小割-5-0"><a href="#最小割-5-0" class="headerlink" title="最小割 5/0"></a>最小割 5/0</h2><h3 id="闭合图"><a href="#闭合图" class="headerlink" title="闭合图"></a>闭合图</h3><h3 id="最小点权覆盖集"><a href="#最小点权覆盖集" class="headerlink" title="最小点权覆盖集"></a>最小点权覆盖集</h3><h3 id="最大点权覆盖集"><a href="#最大点权覆盖集" class="headerlink" title="最大点权覆盖集"></a>最大点权覆盖集</h3><h3 id="分数规划"><a href="#分数规划" class="headerlink" title="分数规划"></a>分数规划</h3><h3 id="最大密度子图"><a href="#最大密度子图" class="headerlink" title="最大密度子图"></a>最大密度子图</h3><h2 id="费用流-3-0"><a href="#费用流-3-0" class="headerlink" title="费用流  3/0"></a>费用流  3/0</h2><h3 id="最短路增广费用流"><a href="#最短路增广费用流" class="headerlink" title="最短路增广费用流"></a>最短路增广费用流</h3><h3 id="zkw费用流"><a href="#zkw费用流" class="headerlink" title="zkw费用流"></a>zkw费用流</h3><h3 id="最小费用可行流"><a href="#最小费用可行流" class="headerlink" title="最小费用可行流"></a>最小费用可行流</h3><hr>
+<h1 id="基础算法-6-6"><a href="#基础算法-6-6" class="headerlink" title="基础算法 6/6"></a>基础算法 6/6</h1><h2 id="模拟-√"><a href="#模拟-√" class="headerlink" title="模拟 √"></a>模拟 √</h2><h2 id="贪心-√"><a href="#贪心-√" class="headerlink" title="贪心 √"></a>贪心 √</h2><h2 id="递推-√"><a href="#递推-√" class="headerlink" title="递推 √"></a>递推 √</h2><h2 id="递归-√"><a href="#递归-√" class="headerlink" title="递归 √"></a>递归 √</h2><h2 id="枚举-暴力-√"><a href="#枚举-暴力-√" class="headerlink" title="枚举,暴力 √"></a>枚举,暴力 √</h2><h2 id="分治-√"><a href="#分治-√" class="headerlink" title="分治 √"></a>分治 √</h2><hr>
+<h1 id="排序-9-8"><a href="#排序-9-8" class="headerlink" title="排序 9/8"></a>排序 9/8</h1><h2 id="冒泡排序-√"><a href="#冒泡排序-√" class="headerlink" title="冒泡排序 √"></a>冒泡排序 √</h2><h2 id="选择排序-√"><a href="#选择排序-√" class="headerlink" title="选择排序 √"></a>选择排序 √</h2><h2 id="桶排-√"><a href="#桶排-√" class="headerlink" title="桶排 √"></a>桶排 √</h2><h2 id="插入排序-√"><a href="#插入排序-√" class="headerlink" title="插入排序 √"></a>插入排序 √</h2><h2 id="归并排序-√"><a href="#归并排序-√" class="headerlink" title="归并排序 √"></a>归并排序 √</h2><h2 id="快速排序-√"><a href="#快速排序-√" class="headerlink" title="快速排序 √"></a>快速排序 √</h2><h2 id="希尔排序-√"><a href="#希尔排序-√" class="headerlink" title="希尔排序 √"></a>希尔排序 √</h2><h2 id="外部排序"><a href="#外部排序" class="headerlink" title="外部排序"></a>外部排序</h2><hr>
+<h1 id="查找算法-3-3"><a href="#查找算法-3-3" class="headerlink" title="查找算法 3/3"></a>查找算法 3/3</h1><h2 id="二分答案-√"><a href="#二分答案-√" class="headerlink" title="二分答案 √"></a>二分答案 √</h2><h2 id="顺序查找-√"><a href="#顺序查找-√" class="headerlink" title="顺序查找 √"></a>顺序查找 √</h2><h2 id="二分查找-√"><a href="#二分查找-√" class="headerlink" title="二分查找 √"></a>二分查找 √</h2><hr>
+<h1 id="二分图-5-0"><a href="#二分图-5-0" class="headerlink" title="二分图 5/0"></a>二分图 5/0</h1><h2 id="最大匹配-3-0"><a href="#最大匹配-3-0" class="headerlink" title="最大匹配 3/0"></a>最大匹配 3/0</h2><h3 id="匈牙利算法"><a href="#匈牙利算法" class="headerlink" title="匈牙利算法"></a>匈牙利算法</h3><h3 id="一般图的最大匹配"><a href="#一般图的最大匹配" class="headerlink" title="一般图的最大匹配"></a>一般图的最大匹配</h3><h3 id="Konig定理"><a href="#Konig定理" class="headerlink" title="Konig定理"></a>Konig定理</h3><h2 id="带权二分图匹配"><a href="#带权二分图匹配" class="headerlink" title="带权二分图匹配"></a>带权二分图匹配</h2><h2 id="稳定婚姻系统"><a href="#稳定婚姻系统" class="headerlink" title="稳定婚姻系统"></a>稳定婚姻系统</h2><hr>
+<h1 id="其他技巧-18-2"><a href="#其他技巧-18-2" class="headerlink" title="其他技巧 18/2"></a>其他技巧 18/2</h1><h2 id="暴力数据结构"><a href="#暴力数据结构" class="headerlink" title="暴力数据结构"></a>暴力数据结构</h2><h2 id="高精-√"><a href="#高精-√" class="headerlink" title="高精 √"></a>高精 √</h2><h2 id="博弈论-3-0"><a href="#博弈论-3-0" class="headerlink" title="博弈论 3/0"></a>博弈论 3/0</h2><h3 id="Nim游戏"><a href="#Nim游戏" class="headerlink" title="Nim游戏"></a>Nim游戏</h3><h3 id="博弈树"><a href="#博弈树" class="headerlink" title="博弈树"></a>博弈树</h3><h3 id="Shannon开关游戏"><a href="#Shannon开关游戏" class="headerlink" title="Shannon开关游戏"></a>Shannon开关游戏</h3><h2 id="倍增"><a href="#倍增" class="headerlink" title="倍增"></a>倍增</h2><h2 id="离散化"><a href="#离散化" class="headerlink" title="离散化"></a>离散化</h2><h2 id="哈希，HASH-3-0"><a href="#哈希，HASH-3-0" class="headerlink" title="哈希，HASH 3/0"></a>哈希，HASH 3/0</h2><h3 id="ELFhash"><a href="#ELFhash" class="headerlink" title="ELFhash"></a>ELFhash</h3><h3 id="SDBM"><a href="#SDBM" class="headerlink" title="SDBM"></a>SDBM</h3><h3 id="BKDR"><a href="#BKDR" class="headerlink" title="BKDR"></a>BKDR</h3><h2 id="随机贪心-随机化"><a href="#随机贪心-随机化" class="headerlink" title="随机贪心,随机化"></a>随机贪心,随机化</h2><h2 id="快速傅里叶变换-DFT-FFT"><a href="#快速傅里叶变换-DFT-FFT" class="headerlink" title="快速傅里叶变换,DFT,FFT"></a>快速傅里叶变换,DFT,FFT</h2><h2 id="位运算-按位"><a href="#位运算-按位" class="headerlink" title="位运算,按位"></a>位运算,按位</h2><h2 id="骗分-√"><a href="#骗分-√" class="headerlink" title="骗分 √"></a>骗分 √</h2><h2 id="NP问题"><a href="#NP问题" class="headerlink" title="NP问题"></a>NP问题</h2><h2 id="构造"><a href="#构造" class="headerlink" title="构造"></a>构造</h2><h2 id="快速数论变换NTT"><a href="#快速数论变换NTT" class="headerlink" title="快速数论变换NTT"></a>快速数论变换NTT</h2><h2 id="快速沃尔什变换FWT"><a href="#快速沃尔什变换FWT" class="headerlink" title="快速沃尔什变换FWT"></a>快速沃尔什变换FWT</h2><hr>
+<h1 id="字符串-9-0"><a href="#字符串-9-0" class="headerlink" title="字符串 9/0"></a>字符串 9/0</h1><h2 id="后缀自动机-SAM"><a href="#后缀自动机-SAM" class="headerlink" title="后缀自动机,SAM"></a>后缀自动机,SAM</h2><h2 id="字典树-Trie树"><a href="#字典树-Trie树" class="headerlink" title="字典树,Trie树"></a>字典树,Trie树</h2><h2 id="AC自动机"><a href="#AC自动机" class="headerlink" title="AC自动机"></a>AC自动机</h2><h2 id="KMP"><a href="#KMP" class="headerlink" title="KMP"></a>KMP</h2><h2 id="后缀数组-SA"><a href="#后缀数组-SA" class="headerlink" title="后缀数组,SA"></a>后缀数组,SA</h2><h2 id="后缀树"><a href="#后缀树" class="headerlink" title="后缀树"></a>后缀树</h2><h2 id="有限状态自动机"><a href="#有限状态自动机" class="headerlink" title="有限状态自动机"></a>有限状态自动机</h2><h2 id="哈夫曼-Huffman"><a href="#哈夫曼-Huffman" class="headerlink" title="哈夫曼,Huffman"></a>哈夫曼,Huffman</h2><h2 id="回文自动机PAM"><a href="#回文自动机PAM" class="headerlink" title="回文自动机PAM"></a>回文自动机PAM</h2><h2 id="Manacher算法"><a href="#Manacher算法" class="headerlink" title="Manacher算法"></a>Manacher算法</h2><hr>
+<h1 id="动态规划-动规-dp-15-4"><a href="#动态规划-动规-dp-15-4" class="headerlink" title="动态规划,动规,dp 15/4"></a>动态规划,动规,dp 15/4</h1><h2 id="背包-√"><a href="#背包-√" class="headerlink" title="背包 √"></a>背包 √</h2><h2 id="环型动规-环型dp"><a href="#环型动规-环型dp" class="headerlink" title="环型动规,环型dp"></a>环型动规,环型dp</h2><h2 id="数位动规-数位dp"><a href="#数位动规-数位dp" class="headerlink" title="数位动规,数位dp"></a>数位动规,数位dp</h2><h2 id="多维状态"><a href="#多维状态" class="headerlink" title="多维状态"></a>多维状态</h2><h2 id="区间动规-区间dp"><a href="#区间动规-区间dp" class="headerlink" title="区间动规,区间dp"></a>区间动规,区间dp</h2><h2 id="子母树"><a href="#子母树" class="headerlink" title="子母树"></a>子母树</h2><h2 id="动态规划优化-7-3"><a href="#动态规划优化-7-3" class="headerlink" title="动态规划优化 7/3"></a>动态规划优化 7/3</h2><h3 id="单调队列-√"><a href="#单调队列-√" class="headerlink" title="单调队列 √"></a>单调队列 √</h3><h3 id="降低维度-降维"><a href="#降低维度-降维" class="headerlink" title="降低维度,降维"></a>降低维度,降维</h3><h3 id="优先队列-√"><a href="#优先队列-√" class="headerlink" title="优先队列 √"></a>优先队列 √</h3><h3 id="矩阵加速-矩阵优化"><a href="#矩阵加速-矩阵优化" class="headerlink" title="矩阵加速,矩阵优化"></a>矩阵加速,矩阵优化</h3><h3 id="斜率优化"><a href="#斜率优化" class="headerlink" title="斜率优化"></a>斜率优化</h3><h3 id="状态压缩-状压-√"><a href="#状态压缩-状压-√" class="headerlink" title="状态压缩,状压 √"></a>状态压缩,状压 √</h3><h3 id="四边形不等式"><a href="#四边形不等式" class="headerlink" title="四边形不等式"></a>四边形不等式</h3><h2 id="树形"><a href="#树形" class="headerlink" title="树形"></a>树形</h2><h2 id="插头dp"><a href="#插头dp" class="headerlink" title="插头dp"></a>插头dp</h2><hr>
+<h1 id="搜索-12-4"><a href="#搜索-12-4" class="headerlink" title="搜索 12/4"></a>搜索 12/4</h1><h2 id="广度优先搜索-BFS-√"><a href="#广度优先搜索-BFS-√" class="headerlink" title="广度优先搜索,BFS √"></a>广度优先搜索,BFS √</h2><h2 id="深度优先搜索-DFS-√"><a href="#深度优先搜索-DFS-√" class="headerlink" title="深度优先搜索,DFS √"></a>深度优先搜索,DFS √</h2><h2 id="剪枝-√"><a href="#剪枝-√" class="headerlink" title="剪枝 √"></a>剪枝 √</h2><h2 id="记忆化搜索-√"><a href="#记忆化搜索-√" class="headerlink" title="记忆化搜索 √"></a>记忆化搜索 √</h2><h2 id="启发式搜索-6-0"><a href="#启发式搜索-6-0" class="headerlink" title="启发式搜索 6/0"></a>启发式搜索 6/0</h2><h3 id="启发式迭代加深-IDA"><a href="#启发式迭代加深-IDA" class="headerlink" title="启发式迭代加深,IDA*"></a>启发式迭代加深,IDA*</h3><h3 id="Dancing-Links"><a href="#Dancing-Links" class="headerlink" title="Dancing Links"></a>Dancing Links</h3><h3 id="爬山法"><a href="#爬山法" class="headerlink" title="爬山法"></a>爬山法</h3><h3 id="模拟退火"><a href="#模拟退火" class="headerlink" title="模拟退火"></a>模拟退火</h3><h3 id="遗传"><a href="#遗传" class="headerlink" title="遗传"></a>遗传</h3><h3 id="A-算法"><a href="#A-算法" class="headerlink" title="A*算法"></a>A*算法</h3><h2 id="迭代加深"><a href="#迭代加深" class="headerlink" title="迭代加深"></a>迭代加深</h2><h2 id="随机调整"><a href="#随机调整" class="headerlink" title="随机调整"></a>随机调整</h2><hr>
+<h1 id="数论-数学-37-2"><a href="#数论-数学-37-2" class="headerlink" title="数论,数学 37/2"></a>数论,数学 37/2</h1><hr>
+<h1 id="图论-32-6"><a href="#图论-32-6" class="headerlink" title="图论 32/6"></a>图论 32/6</h1><hr>
+<h1 id="计算几何-9-0"><a href="#计算几何-9-0" class="headerlink" title="计算几何 9/0"></a>计算几何 9/0</h1><hr>
+<h1 id="树形结构-32-2"><a href="#树形结构-32-2" class="headerlink" title="树形结构 32/2"></a>树形结构 32/2</h1><hr>
+<h1 id="总统计-207-40"><a href="#总统计-207-40" class="headerlink" title="总统计 207/40"></a>总统计 207/40</h1><h2 id="完成率-19-32"><a href="#完成率-19-32" class="headerlink" title="完成率 19.32%"></a>完成率 19.32%</h2>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/25/圣诞节快乐/" rel="next" title="圣诞节快乐">
+                <i class="fa fa-chevron-left"></i> 圣诞节快乐
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">smallfang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          <script language="javascript">
+            function tick() {
+                var years,days,hours, minutes, seconds;
+                var openday = new Date('2018/12/01 00:00');    //这里填写建站时间
+                var today = new Date(); //获取系统当前时间
+                var total = (today.getTime()-openday.getTime())/1000;
+                years=Math.floor(total/31536000);
+                total=total-years*31536000;
+                days=Math.floor(total/86400);
+                total=total-days*86400;
+                hours=Math.floor(total/3600);
+                total=total-hours*3600;
+                minutes=Math.floor(total/60);
+                total=total-minutes*60;
+                seconds=Math.floor(total);
+                timeString = "网站运行："+years+"年"+days+"天"+hours+"时"+minutes+"分"+seconds+"秒";
+                document.getElementById("Clock").innerHTML = timeString;
+                window.setTimeout("tick();", 1000);
+            }
+            window.onload = tick;
+            </script>
+            <span id="Clock"></span>
+			<br>
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#线性结构-9-3"><span class="nav-number">1.</span> <span class="nav-text">线性结构 9/3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#莫队"><span class="nav-number">1.1.</span> <span class="nav-text">莫队</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#前缀和"><span class="nav-number">1.2.</span> <span class="nav-text">前缀和</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组-√"><span class="nav-number">1.3.</span> <span class="nav-text">数组 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#栈-√"><span class="nav-number">1.4.</span> <span class="nav-text">栈 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#队列-√"><span class="nav-number">1.5.</span> <span class="nav-text">队列 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#块状链表-块状数组-分块"><span class="nav-number">1.6.</span> <span class="nav-text">块状链表,块状数组,分块</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#st表-稀疏表"><span class="nav-number">1.7.</span> <span class="nav-text">st表,稀疏表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#差分"><span class="nav-number">1.8.</span> <span class="nav-text">差分</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#网络流-11-0"><span class="nav-number">2.</span> <span class="nav-text">网络流 11/0</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最大流-3-0"><span class="nav-number">2.1.</span> <span class="nav-text">最大流 3/0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dinic"><span class="nav-number">2.1.1.</span> <span class="nav-text">Dinic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Sap"><span class="nav-number">2.1.2.</span> <span class="nav-text">Sap</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#有上下界的最大流"><span class="nav-number">2.1.3.</span> <span class="nav-text">有上下界的最大流</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最小割-5-0"><span class="nav-number">2.2.</span> <span class="nav-text">最小割 5/0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#闭合图"><span class="nav-number">2.2.1.</span> <span class="nav-text">闭合图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小点权覆盖集"><span class="nav-number">2.2.2.</span> <span class="nav-text">最小点权覆盖集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最大点权覆盖集"><span class="nav-number">2.2.3.</span> <span class="nav-text">最大点权覆盖集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分数规划"><span class="nav-number">2.2.4.</span> <span class="nav-text">分数规划</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最大密度子图"><span class="nav-number">2.2.5.</span> <span class="nav-text">最大密度子图</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#费用流-3-0"><span class="nav-number">2.3.</span> <span class="nav-text">费用流  3/0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#最短路增广费用流"><span class="nav-number">2.3.1.</span> <span class="nav-text">最短路增广费用流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zkw费用流"><span class="nav-number">2.3.2.</span> <span class="nav-text">zkw费用流</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最小费用可行流"><span class="nav-number">2.3.3.</span> <span class="nav-text">最小费用可行流</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#基础算法-6-6"><span class="nav-number">3.</span> <span class="nav-text">基础算法 6/6</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#模拟-√"><span class="nav-number">3.1.</span> <span class="nav-text">模拟 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#贪心-√"><span class="nav-number">3.2.</span> <span class="nav-text">贪心 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递推-√"><span class="nav-number">3.3.</span> <span class="nav-text">递推 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#递归-√"><span class="nav-number">3.4.</span> <span class="nav-text">递归 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#枚举-暴力-√"><span class="nav-number">3.5.</span> <span class="nav-text">枚举,暴力 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分治-√"><span class="nav-number">3.6.</span> <span class="nav-text">分治 √</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#排序-9-8"><span class="nav-number">4.</span> <span class="nav-text">排序 9/8</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#冒泡排序-√"><span class="nav-number">4.1.</span> <span class="nav-text">冒泡排序 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择排序-√"><span class="nav-number">4.2.</span> <span class="nav-text">选择排序 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#桶排-√"><span class="nav-number">4.3.</span> <span class="nav-text">桶排 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插入排序-√"><span class="nav-number">4.4.</span> <span class="nav-text">插入排序 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#归并排序-√"><span class="nav-number">4.5.</span> <span class="nav-text">归并排序 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速排序-√"><span class="nav-number">4.6.</span> <span class="nav-text">快速排序 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#希尔排序-√"><span class="nav-number">4.7.</span> <span class="nav-text">希尔排序 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外部排序"><span class="nav-number">4.8.</span> <span class="nav-text">外部排序</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#查找算法-3-3"><span class="nav-number">5.</span> <span class="nav-text">查找算法 3/3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#二分答案-√"><span class="nav-number">5.1.</span> <span class="nav-text">二分答案 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#顺序查找-√"><span class="nav-number">5.2.</span> <span class="nav-text">顺序查找 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#二分查找-√"><span class="nav-number">5.3.</span> <span class="nav-text">二分查找 √</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#二分图-5-0"><span class="nav-number">6.</span> <span class="nav-text">二分图 5/0</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最大匹配-3-0"><span class="nav-number">6.1.</span> <span class="nav-text">最大匹配 3/0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#匈牙利算法"><span class="nav-number">6.1.1.</span> <span class="nav-text">匈牙利算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一般图的最大匹配"><span class="nav-number">6.1.2.</span> <span class="nav-text">一般图的最大匹配</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Konig定理"><span class="nav-number">6.1.3.</span> <span class="nav-text">Konig定理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带权二分图匹配"><span class="nav-number">6.2.</span> <span class="nav-text">带权二分图匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#稳定婚姻系统"><span class="nav-number">6.3.</span> <span class="nav-text">稳定婚姻系统</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其他技巧-18-2"><span class="nav-number">7.</span> <span class="nav-text">其他技巧 18/2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#暴力数据结构"><span class="nav-number">7.1.</span> <span class="nav-text">暴力数据结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#高精-√"><span class="nav-number">7.2.</span> <span class="nav-text">高精 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#博弈论-3-0"><span class="nav-number">7.3.</span> <span class="nav-text">博弈论 3/0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Nim游戏"><span class="nav-number">7.3.1.</span> <span class="nav-text">Nim游戏</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#博弈树"><span class="nav-number">7.3.2.</span> <span class="nav-text">博弈树</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shannon开关游戏"><span class="nav-number">7.3.3.</span> <span class="nav-text">Shannon开关游戏</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#倍增"><span class="nav-number">7.4.</span> <span class="nav-text">倍增</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#离散化"><span class="nav-number">7.5.</span> <span class="nav-text">离散化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哈希，HASH-3-0"><span class="nav-number">7.6.</span> <span class="nav-text">哈希，HASH 3/0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ELFhash"><span class="nav-number">7.6.1.</span> <span class="nav-text">ELFhash</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SDBM"><span class="nav-number">7.6.2.</span> <span class="nav-text">SDBM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#BKDR"><span class="nav-number">7.6.3.</span> <span class="nav-text">BKDR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机贪心-随机化"><span class="nav-number">7.7.</span> <span class="nav-text">随机贪心,随机化</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速傅里叶变换-DFT-FFT"><span class="nav-number">7.8.</span> <span class="nav-text">快速傅里叶变换,DFT,FFT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#位运算-按位"><span class="nav-number">7.9.</span> <span class="nav-text">位运算,按位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#骗分-√"><span class="nav-number">7.10.</span> <span class="nav-text">骗分 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NP问题"><span class="nav-number">7.11.</span> <span class="nav-text">NP问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#构造"><span class="nav-number">7.12.</span> <span class="nav-text">构造</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速数论变换NTT"><span class="nav-number">7.13.</span> <span class="nav-text">快速数论变换NTT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#快速沃尔什变换FWT"><span class="nav-number">7.14.</span> <span class="nav-text">快速沃尔什变换FWT</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#字符串-9-0"><span class="nav-number">8.</span> <span class="nav-text">字符串 9/0</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#后缀自动机-SAM"><span class="nav-number">8.1.</span> <span class="nav-text">后缀自动机,SAM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字典树-Trie树"><span class="nav-number">8.2.</span> <span class="nav-text">字典树,Trie树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AC自动机"><span class="nav-number">8.3.</span> <span class="nav-text">AC自动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#KMP"><span class="nav-number">8.4.</span> <span class="nav-text">KMP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后缀数组-SA"><span class="nav-number">8.5.</span> <span class="nav-text">后缀数组,SA</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后缀树"><span class="nav-number">8.6.</span> <span class="nav-text">后缀树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#有限状态自动机"><span class="nav-number">8.7.</span> <span class="nav-text">有限状态自动机</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#哈夫曼-Huffman"><span class="nav-number">8.8.</span> <span class="nav-text">哈夫曼,Huffman</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#回文自动机PAM"><span class="nav-number">8.9.</span> <span class="nav-text">回文自动机PAM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Manacher算法"><span class="nav-number">8.10.</span> <span class="nav-text">Manacher算法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#动态规划-动规-dp-15-4"><span class="nav-number">9.</span> <span class="nav-text">动态规划,动规,dp 15/4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#背包-√"><span class="nav-number">9.1.</span> <span class="nav-text">背包 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#环型动规-环型dp"><span class="nav-number">9.2.</span> <span class="nav-text">环型动规,环型dp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数位动规-数位dp"><span class="nav-number">9.3.</span> <span class="nav-text">数位动规,数位dp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多维状态"><span class="nav-number">9.4.</span> <span class="nav-text">多维状态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#区间动规-区间dp"><span class="nav-number">9.5.</span> <span class="nav-text">区间动规,区间dp</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#子母树"><span class="nav-number">9.6.</span> <span class="nav-text">子母树</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态规划优化-7-3"><span class="nav-number">9.7.</span> <span class="nav-text">动态规划优化 7/3</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#单调队列-√"><span class="nav-number">9.7.1.</span> <span class="nav-text">单调队列 √</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#降低维度-降维"><span class="nav-number">9.7.2.</span> <span class="nav-text">降低维度,降维</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优先队列-√"><span class="nav-number">9.7.3.</span> <span class="nav-text">优先队列 √</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#矩阵加速-矩阵优化"><span class="nav-number">9.7.4.</span> <span class="nav-text">矩阵加速,矩阵优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#斜率优化"><span class="nav-number">9.7.5.</span> <span class="nav-text">斜率优化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#状态压缩-状压-√"><span class="nav-number">9.7.6.</span> <span class="nav-text">状态压缩,状压 √</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四边形不等式"><span class="nav-number">9.7.7.</span> <span class="nav-text">四边形不等式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#树形"><span class="nav-number">9.8.</span> <span class="nav-text">树形</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#插头dp"><span class="nav-number">9.9.</span> <span class="nav-text">插头dp</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#搜索-12-4"><span class="nav-number">10.</span> <span class="nav-text">搜索 12/4</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#广度优先搜索-BFS-√"><span class="nav-number">10.1.</span> <span class="nav-text">广度优先搜索,BFS √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#深度优先搜索-DFS-√"><span class="nav-number">10.2.</span> <span class="nav-text">深度优先搜索,DFS √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#剪枝-√"><span class="nav-number">10.3.</span> <span class="nav-text">剪枝 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#记忆化搜索-√"><span class="nav-number">10.4.</span> <span class="nav-text">记忆化搜索 √</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#启发式搜索-6-0"><span class="nav-number">10.5.</span> <span class="nav-text">启发式搜索 6/0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#启发式迭代加深-IDA"><span class="nav-number">10.5.1.</span> <span class="nav-text">启发式迭代加深,IDA*</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Dancing-Links"><span class="nav-number">10.5.2.</span> <span class="nav-text">Dancing Links</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#爬山法"><span class="nav-number">10.5.3.</span> <span class="nav-text">爬山法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#模拟退火"><span class="nav-number">10.5.4.</span> <span class="nav-text">模拟退火</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遗传"><span class="nav-number">10.5.5.</span> <span class="nav-text">遗传</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#A-算法"><span class="nav-number">10.5.6.</span> <span class="nav-text">A*算法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代加深"><span class="nav-number">10.6.</span> <span class="nav-text">迭代加深</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#随机调整"><span class="nav-number">10.7.</span> <span class="nav-text">随机调整</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数论-数学-37-2"><span class="nav-number">11.</span> <span class="nav-text">数论,数学 37/2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#图论-32-6"><span class="nav-number">12.</span> <span class="nav-text">图论 32/6</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#计算几何-9-0"><span class="nav-number">13.</span> <span class="nav-text">计算几何 9/0</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#树形结构-32-2"><span class="nav-number">14.</span> <span class="nav-text">树形结构 32/2</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总统计-207-40"><span class="nav-number">15.</span> <span class="nav-text">总统计 207/40</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#完成率-19-32"><span class="nav-number">15.1.</span> <span class="nav-text">完成率 19.32%</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">smallfang</span>
+
+  
+    
+    
+  
+  <span class="post-meta-divider">|</span>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共3.2k字</span>
+
+</div>
+</div>
+博客版本
+<span class="post-meta-divider">|</span>
+V0.2.1
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: '4rR36pyXQvaIkPnJh9qqRQnL-gzGzoHsz',
+        appKey: 'hFlJeYVHD5xDUyqMQXxc1QPR',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+  <div class="eye">
+  <div class="eye1">
+    <ul>
+      <li style="background-color:#C7EDCC">豆沙绿</li>
+      <li style="background-color:#FAF9DE">杏仁黄 </li>
+      <li style="background-color:#FFFFFF">银河白</li>
+      <li style="background-color:#000000">极光黑</li>
+    </ul>
+  </div>
+  <div class="eye2">满天星</div>
+   
+</div>
+</body>
+</html>
