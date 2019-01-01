@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://smallfang.tk/"/>
-  <updated>2018-12-25T12:09:15.544Z</updated>
+  <updated>2019-01-01T10:55:56.991Z</updated>
   <id>http://smallfang.tk/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>新年快乐!</title>
+    <link href="http://smallfang.tk/2019/01/01/%E6%96%B0%E5%B9%B4%E5%BF%AB%E4%B9%90/"/>
+    <id>http://smallfang.tk/2019/01/01/新年快乐/</id>
+    <published>2019-01-01T10:53:36.000Z</published>
+    <updated>2019-01-01T10:55:56.991Z</updated>
+    
+    <content type="html"><![CDATA[<p>Happy new year!</p><a id="more"></a><p>先前没有来得及发文,以后补上…</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Happy new year!&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>算法统计</title>
