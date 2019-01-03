@@ -311,7 +311,7 @@
         
           
         
-        嗯..! 目前共计 11 篇文章。 继续努力。
+        嗯..! 目前共计 10 篇文章。 继续努力。
       </span>
 
       
@@ -724,7 +724,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">10</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -771,7 +771,8 @@
           
           
 
-          <script language="javascript">
+          
+<script language="javascript">
             function tick() {
                 var years,days,hours, minutes, seconds;
                 var openday = new Date('2018/12/01 00:00');    //这里填写建站时间
@@ -793,8 +794,50 @@
             window.onload = tick;
             </script>
             <span id="Clock"></span>
-			<br>
+			
+<br>
+<center>--功能--</center>
+<br>
+<div class="feed-link motion-element">
+              <a href="#" onclick="setnfight();">
+                night
+              </a>
+			  <br>
+            </div><script>
 
+SetCookie("night",0);
+function SetCookie(name,value)//两个参数，一个是cookie的名子，一个是值
+{
+    var Days = 300; //此 cookie 将被保存 30 天
+    var exp  = new Date();    //new Date("December 31, 9998");
+    exp.setTime(exp.getTime() + Days*24*60*60*1000);
+    document.cookie = name + "="+ escape (value) + ";expires=" + exp.toGMTString();
+}
+function getCookie(name)//取cookies函数       
+{
+    var arr = document.cookie.match(new RegExp("(^| )"+name+"=([^;]*)(;|$)"));
+     if(arr != null) return (arr[2]); return null;
+
+}
+function delCookie(name)//删除cookie
+{
+    var exp = new Date();
+    exp.setTime(exp.getTime() - 1);
+    var cval=getCookie(name);
+    if(cval!=null) document.cookie= name + "="+cval+";expires="+exp.toGMTString();
+}
+function isnight()
+{
+    var name=getCookie("night");
+	if(name==1)return true;
+	else return false;
+}
+function setnight()
+{
+      alert("已经切换模式");
+	SetCookie("night",1);
+}
+</script>
         </div>
       </section>
 
@@ -1341,17 +1384,8 @@ V0.2.1
   
 
   
-  <div class="eye">
-  <div class="eye1">
-    <ul>
-      <li style="background-color:#C7EDCC">豆沙绿</li>
-      <li style="background-color:#FAF9DE">杏仁黄 </li>
-      <li style="background-color:#FFFFFF">银河白</li>
-      <li style="background-color:#000000">极光黑</li>
-    </ul>
-  </div>
-  <div class="eye2">满天星</div>
-   
-</div>
+
+<script type="text/javascript" src="/lib/zclip/clipboard.min.js"></script>	
+<script type="text/javascript" src="/js/src/custom.js"></script>
 </body>
 </html>
