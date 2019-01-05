@@ -30,58 +30,11 @@
   color: #fff !important;
   margin-bottom: 6px;
 }
-#app-header {
-  height: 380px !important;
-  display: block;
-  position: relative !important;
-  left: 0 !important;
-  right: 0 !important;
-  background: linear-gradient(87deg, #5e72e4 0, #825ee4 100%) !important;
-  border: none;
-  color: #fff;
-  font-weight: unset !important;
-  line-height: 100px;
-}
-#app-header .content div.width-wrap.min-margin {
-  max-width: 1225px !important;
-  width: unset !important;
-}
 .bg-wrap {
   display: none;
 }
-#app-header h1 {
-  white-space: nowrap;
-  overflow: hidden;
-  position: relative;
-  font-size: 50px;
-  padding-left: 5px;
-}
 .lg-toolbar {
   display: none;
-}
-#app-header h1:before {
-  content: "";
-  box-shadow: inset -15px 0 30px #7f5fe4;
-  position: absolute;
-  right: 0;
-  top: -2000px;
-  left: -2000px;
-  bottom: -2000px;
-  pointer-events: none;
-}
-#app-body-new {
-  margin-top: -180px;
-}
-html,
-body {
-  background-color: !important;
-}
-html,
-body {
-  font-family: 'open sans' !important;
-}
-.lg-header {
-  box-shadow: 0 5px 15px rgba(50,50,93,0.1), 0 5px 8px rgba(0,0,0,0.07) !important;
 }
 .am-input-group {
   transition: box-shadow 0.15s ease;
@@ -2079,7 +2032,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff7090;
+  background: #ffd471;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3193,9 +3146,11 @@ hr {
   padding: 25px;
   -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
   -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+  border-radius: 7px 7px 7px 7px;
 }
 * {
   cursor: url("/img/hua.ico"), auto !important;
+border
 }
 :active {
   cursor: url("/img/anxia.ico"), auto !important;
@@ -3260,6 +3215,18 @@ hr {
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
   transform: scale(1.1);
+}
+.sidebar-toggle {
+  bottom: 19.53px;
+  border-radius: 3px 3px 3px 3px;
+}
+.back-to-top {
+  right: 60px;
+  border-radius: 3px 3px 3px 3px;
+}
+.back-to-top-on {
+  right: 60px;
+  border-radius: 3px 3px 3px 3px;
 }
 @-moz-keyframes fadeLeft {
   from {
