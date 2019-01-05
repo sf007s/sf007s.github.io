@@ -72,6 +72,83 @@
 #app-body-new {
   margin-top: -180px;
 }
+html,
+body {
+  background-color: !important;
+}
+html,
+body {
+  font-family: 'open sans' !important;
+}
+.lg-header {
+  box-shadow: 0 5px 15px rgba(50,50,93,0.1), 0 5px 8px rgba(0,0,0,0.07) !important;
+}
+.am-input-group {
+  transition: box-shadow 0.15s ease;
+  border: none;
+  border-radius: 0.5rem !important;
+}
+.am-form-field {
+  border: none;
+  border-radius: 0.5rem !important;
+  box-shadow: 0 1px 3px rgba(50,50,93,0.15), 0 1px 0 rgba(0,0,0,0.02);
+}
+.am-form-field:focus {
+  box-shadow: 0 4px 6px rgba(50,50,93,0.08), 0 1px 3px rgba(0,0,0,0.05) !important;
+}
+.am-input-group-sm>.am-form-field,
+.am-input-group-sm>.am-input-group-btn>.am-btn,
+.am-input-group-sm>.am-input-group-label {
+  font-size: 1.35rem !important;
+}
+.am-input-group-label {
+  background: transparent;
+  border: none;
+}
+.am-input-group-danger,
+.am-input-group-primary {
+  box-shadow: none;
+}
+.am-input-group-danger > .am-input-group-label,
+.am-input-group-primary > .am-input-group-label {
+  border-radius: 0.5rem !important;
+  outline: none !important;
+  letter-spacing: 0.05em;
+  transition: all 0.15s ease;
+  box-shadow: 0 4px 6px rgba(50,50,93,0.11), 0 1px 3px rgba(0,0,0,0.08);
+  color: #fff !important;
+  margin-bottom: 6px;
+  height: 33.4px;
+}
+.am-input-group-danger > .am-input-group-label:hover,
+.am-input-group-primary > .am-input-group-label:hover {
+  box-shadow: 0 7px 14px rgba(50,50,93,0.1), 0 3px 6px rgba(0,0,0,0.08);
+}
+.am-input-group-danger > .am-input-group-label:active,
+.am-input-group-primary > .am-input-group-label:active {
+  box-shadow: none;
+}
+.am-input-group-danger > .am-input-group-label {
+  border-color: #f5365c;
+  background-color: #ec0c38;
+}
+.am-input-group-primary > .am-input-group-label {
+  border-color: #5e72e4;
+  background-color: #5e72e4;
+  border-radius: 0.5rem !important;
+}
+textarea {
+  box-shadow: 0 1px 3px rgba(50,50,93,0.15), 0 1px 0 rgba(0,0,0,0.02);
+  border: none !important;
+}
+textarea:focus {
+  box-shadow: 0 4px 6px rgba(50,50,93,0.08), 0 1px 3px rgba(0,0,0,0.05) !important;
+}
+.lg-input-title {
+  margin-bottom: 5px;
+  border-radius: 5px;
+  border-color: #ddd;
+}
 /* normalize.css v3.0.2 | MIT License | git.io/normalize */
 html {
   font-family: sans-serif; /* 1 */
@@ -2002,7 +2079,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #af6e63;
+  background: #ff7090;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3183,4 +3260,60 @@ hr {
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
   transform: scale(1.1);
+}
+@-moz-keyframes fadeLeft {
+  from {
+    transform: translatex(-25px);
+    opacity: 0;
+  }
+}
+@-webkit-keyframes fadeLeft {
+  from {
+    transform: translatex(-25px);
+    opacity: 0;
+  }
+}
+@-o-keyframes fadeLeft {
+  from {
+    transform: translatex(-25px);
+    opacity: 0;
+  }
+}
+@keyframes fadeLeft {
+  from {
+    transform: translatex(-25px);
+    opacity: 0;
+  }
+}
+@-moz-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-o-keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
