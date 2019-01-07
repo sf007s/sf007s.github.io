@@ -97,4 +97,26 @@
         <tag>题解</tag>
       </tags>
   </entry>
+  <entry>
+    <title><![CDATA[洛谷题解-P1449-后缀表达式]]></title>
+    <url>%2F2018%2F09%2F27%2F%E6%B4%9B%E8%B0%B7%E9%A2%98%E8%A7%A3-P1449-%E5%90%8E%E7%BC%80%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[转移来自 cnblogs 0 前言这里空空如也 2 思路就当不存在 代码有注释,懒得打… 3 代码`cpp #include //string #include #include //栈的头文件using namespace std;char g[10000];int main(){ cin&gt;&gt;g; int a=0; stack &lt;int&gt; s; bool flag=false; for(int i=0;;i++) { if(g[i]==&apos;@&apos;)break; if(g[i]&lt;&apos;0&apos; || g[i]&gt;&apos;9&apos;) { if(g[i]==&apos;.&apos;)//如果a&gt;0 s.push(a); else { if(g[i]==&apos;*&apos;) { int stop=s.top(); s.pop(); stop=stop*s.top(); s.pop(); s.push(stop); } if(g[i]==&apos;/&apos;) { int stop=s.top(); s.pop(); stop=s.top()/stop; s.pop(); s.push(stop); } if(g[i]==&apos;-&apos;) { int stop=s.top(); s.pop(); stop=s.top()-stop; s.pop(); s.push(stop); } if(g[i]==&apos;+&apos;) { int stop=s.top(); s.pop(); stop=stop+s.top(); s.pop(); s.push(stop); } } a=0; } else { a=a*10; a=a+g[i]-&apos;0&apos;; } } if(s.empty())s.push(a); cout&lt;&lt;s.top(); } -The end-]]></content>
+      <categories>
+        <category>洛谷题解</category>
+      </categories>
+      <tags>
+        <tag>cnblogs</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[洛谷题解-P1025-数的划分]]></title>
+    <url>%2F2018%2F09%2F20%2F%E6%B4%9B%E8%B0%B7%E9%A2%98%E8%A7%A3-P1025-%E6%95%B0%E7%9A%84%E5%88%92%E5%88%86%2F</url>
+    <content type="text"><![CDATA[转移来自 cnblogs 0 前言啊呀呀终于有时间写博客啦,题解呢,只有在这里才能水一水，所以以后要抓紧时间水啦(今天太困了就不水了) 1 题目部分懒得复制粘贴了,点这里跳转. 2 题解2.1 简单的思路dfs. 选数.从第一个数开始枚举,一直枚举到第n个,每个从1个开始放,到放n个.然后判断和是不是等于m就可以啦 2.2 一个严重的问题 - 判断重复这个problem让人很讨厌.因为你的判断中不能直接÷3，也不能判断每两个数是否相等,因为1 1 1就是一个反例. 那么,问题来了，怎么判断重复呢? 方法就是让这些数必须为升序,举个栗子: 1 1 5 1 5 1 5 1 1 因为1 5 1不是升序排除,151排除,511排除则只剩下1 1 5 解决问题.（想了1year） 2.3 代码部分思路想完了那就上代码吧: #include using namespace std;int n,m;int a[100000];int b[100000];int vis[100000];int c;void dfs(int x,int last){ if(x==n+1) { int all=0; for(int i=1;i&lt;=x;i++)all=all+b[i]; if(all!=m)return ; for(int i=1;i&lt;x-1;i++) { for(int j=i+1;j&lt;x;j++) { if(b[j]&lt;b[i])return ; } } c++; return ; } for(int i=1;i&lt;=m;i++) { b[x]=i; vis[i]=1; dfs(x+1,i); vis[i]=0; b[x]=0; } }int main(){ cin&gt;&gt;m&gt;&gt;n; c=0; dfs(1,0); cout&lt;&lt;c&lt;&lt;endl; return 0; } 那么我们就提交吧,神奇,只得了40分其他TLE. 2.3 改进好吧,只能剪枝了.如何剪枝呢反正我不知道 首先让人先想到的是 下一个数必定要大于这个数，也就是说a[x+1]&gt;a[x],所以for可以从a[x]一直到n这就是第一个剪枝，好吧那我们把代码写下来吧: // luogu-judger-enable-o2// luogu-judger-enable-o2// luogu-judger-enable-o2 #include using namespace std;int n,m;int a[100000];int b[100000];int vis[100000];int c;void dfs(int x,int last){ if(x==n+1) { int all=0; for(int i=1;i&lt;=x;i++)all=all+b[i]; if(all!=m)return ; for(int i=1;i&lt;x-1;i++) { for(int j=i+1;j&lt;x;j++) { if(b[j]&lt;b[i])return ; } } c++; return ; } for(int i=b[x-1];i&lt;=m;i++) { b[x]=i; vis[i]=1; dfs(x+1,i); vis[i]=0; b[x]=0; } }int main(){ cin&gt;&gt;m&gt;&gt;n; c=0; b[0]=1; dfs(1,0); cout&lt;&lt;c&lt;&lt;endl; return 0; }提交~多对了一个点，那好吧我们还得继续改进 2.4 继续改进好吧。我们得继续剪枝,我们做一个统计就是all,all要最后算,我们是不是可以先算呢.也就是说在x==n+1的时候我们只用判断all是不是等于m,就少了一个for 第二我们在后面增加all,加判断all&gt;m?如果大于了肯定就不是了,下面就上AC代码 2.5 终于通过了123456789101112131415161718192021222324252627282930313233343536373839404142#include &lt;iostream&gt;using namespace std;int n,m;int b[100000];int vis[100000];int c;int all=0;void dfs(int x,int last)&#123; if(x==n+1) &#123; if(all!=m)return ; c++; return ; &#125; for(int i=b[x-1];i+all&lt;=m;i++) &#123; b[x]=i; vis[i]=1; all=all+i; if(all&gt;m)return ; dfs(x+1,i); vis[i]=0; all=all-i; b[x]=0; &#125;&#125;int main()&#123; cin&gt;&gt;m&gt;&gt;n; c=0; b[0]=1; dfs(1,0); cout&lt;&lt;c&lt;&lt;endl; return 0;&#125; bula bula bula ac 100 -The end-]]></content>
+      <categories>
+        <category>洛谷题解</category>
+      </categories>
+      <tags>
+        <tag>cnblogs</tag>
+      </tags>
+  </entry>
 </search>
