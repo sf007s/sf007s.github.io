@@ -1,3 +1,6 @@
+h1:hover {
+  font-size: 200%;
+}
 ::-webkit-scrollbar {
   width: 6px;
   height: 10px;
@@ -2032,7 +2035,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffd471;
+  background: #ff2bc9;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3227,6 +3230,12 @@ border
 .back-to-top-on {
   right: 60px;
   border-radius: 3px 3px 3px 3px;
+}
+.sidebar {
+  background: #000;
+  background-attachment: fixed;
+  background-size: 100%;
+  box-shadow: 1px 1px 2px #5e5e5e;
 }
 @-moz-keyframes fadeLeft {
   from {
