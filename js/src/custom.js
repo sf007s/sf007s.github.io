@@ -1,4 +1,4 @@
-//此函数用于创建复制按钮
+
 function createCopyBtns() {
     var $codeArea = $("figure table");
     //查看页面是否具有代码区域，没有代码块则不创建 复制按钮
