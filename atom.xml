@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://smallfang.tk/"/>
-  <updated>2019-01-17T13:25:10.237Z</updated>
+  <updated>2019-01-24T13:41:31.412Z</updated>
   <id>http://smallfang.tk/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>最长上升子序列</title>
+    <link href="http://smallfang.tk/2019/01/24/%E6%9C%80%E9%95%BF%E4%B8%8A%E5%8D%87%E5%AD%90%E5%BA%8F%E5%88%97/"/>
+    <id>http://smallfang.tk/2019/01/24/最长上升子序列/</id>
+    <published>2019-01-24T13:17:53.000Z</published>
+    <updated>2019-01-24T13:41:31.412Z</updated>
+    
+    <content type="html"><![CDATA[<p><del>我又满血复活了!</del></p><a id="more"></a><h1 id="0-前言"><a href="#0-前言" class="headerlink" title="0 前言"></a>0 前言</h1><p>动态规划中最简单的东西-最长上升子序列</p><h1 id="1-最长上升子序列"><a href="#1-最长上升子序列" class="headerlink" title="1 最长上升子序列"></a>1 最长上升子序列</h1><p>我们就来举个栗子吧.</p><p>1 3 7 3 4</p><p>其中[1,3,4]是一个子序列</p><h1 id="2-动态规划"><a href="#2-动态规划" class="headerlink" title="2 动态规划"></a>2 动态规划</h1><p>此题可以使用动态规划</p><hr><p>其实我不想敷衍了事,但是我实在太困了…</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;del&gt;我又满血复活了!&lt;/del&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>生日快乐</title>
