@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://smallfang.tk/"/>
-  <updated>2019-02-19T12:29:14.116Z</updated>
+  <updated>2019-03-09T13:55:00.244Z</updated>
   <id>http://smallfang.tk/</id>
   
   <author>
@@ -15,6 +15,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>拓扑排序,逻辑开关</title>
+    <link href="http://smallfang.tk/2019/03/09/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F-%E9%80%BB%E8%BE%91%E5%BC%80%E5%85%B3/"/>
+    <id>http://smallfang.tk/2019/03/09/拓扑排序-逻辑开关/</id>
+    <published>2019-03-09T13:36:19.000Z</published>
+    <updated>2019-03-09T13:55:00.244Z</updated>
+    
+    <content type="html"><![CDATA[<p>是我,还没弃坑…</p><a id="more"></a><hr><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在正文开始之前,我先来宣传一下我们工作室,<a href="http://gugug.cn." target="_blank" rel="noopener">这里是工作室官网</a><br>当然,在没备案之前就是得加个.</p><h1 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h1><p>是的,这个名字很怪.我们可以找一个直观的名字去描述拓扑排序,这个名字叫做不包含强连通子图.类似于不能出现1是2的父亲,2是1的父亲<del>(这是一个很奇葩的例子)</del>那么这种含有强连通子图,那么就倒霉了,他就不叫拓扑图,那么就无法用来dp了(这个后面会说)</p><p>那么如果没有类似于强连通子图(连通图),那么就恭喜你,这道题就可以使用dp来进行解决了,如果你的dp不熟悉,那么也可以另找退路,类似于记忆化搜索解决(这个后面会说到).</p><h2 id="拓扑作用"><a href="#拓扑作用" class="headerlink" title="拓扑作用"></a>拓扑作用</h2><p>如果你想使用dp解决在图中的题目,你必须保证此图是拓扑图.</p><p>如果无法保证该图是拓扑图,那么也要恭喜你,你排除了一个无法使用的算法.</p><p>大概,以上就是拓扑了.<br>下面就是一座崭新的世界</p><h1 id="逻辑开关"><a href="#逻辑开关" class="headerlink" title="逻辑开关"></a>逻辑开关</h1><p>首先,我先上一段代码:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span>(x&gt;<span class="number">5</span>)</span><br><span class="line">&#123;</span><br><span class="line">ans=ans+x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>很简洁但是实际上看起来一点都不高大上,在下面,我提供一种简单的算法:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ans=ans+(x&gt;<span class="number">5</span>)*x;</span><br></pre></td></tr></table></figure></p><p>是的,我相信你已经看懂了.</p><p>以上是我归来的第一篇内容,也是一篇纪念,以后可以回来再复习,也希望给大家带来参考.<br>2019.3.9</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;是我,还没弃坑…&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>POJ-登山</title>
+    <link href="http://smallfang.tk/2019/02/20/POJ-%E7%99%BB%E5%B1%B1/"/>
+    <id>http://smallfang.tk/2019/02/20/POJ-登山/</id>
+    <published>2019-02-20T13:11:46.000Z</published>
+    <updated>2019-02-20T13:16:24.148Z</updated>
+    
+    <content type="html"><![CDATA[<p>#题目</p><p>在这里</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;#题目&lt;/p&gt;
+&lt;p&gt;在这里&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="POJ" scheme="http://smallfang.tk/categories/POJ/"/>
+    
+    
+      <category term="dp" scheme="http://smallfang.tk/tags/dp/"/>
+    
+  </entry>
   
   <entry>
     <title>元宵节快乐</title>
