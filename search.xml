@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[家谱]]></title>
+    <url>%2F2019%2F03%2F09%2F%E5%AE%B6%E8%B0%B1%2F</url>
+    <content type="text"><![CDATA[blog … map是个好东西 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354#include &lt;iostream&gt;#include &lt;string&gt;#include &lt;map&gt;using namespace std;map&lt;string,string&gt;p;string searchav(string x)&#123; if(x!=p[x]) p[x]=searchav(p[x]); return p[x];&#125;int main()&#123; bool flag=false; for(;;) &#123; string x; char char_f; if(flag==false) cin&gt;&gt;char_f; if(char_f=='$') &#123; break; &#125; if(char_f=='#') &#123; cin&gt;&gt;x; string father=x; if(p[x]=="") p[x]=x; for(;;) &#123; cin&gt;&gt;char_f;flag=true; if(char_f!='+')break; else &#123; cin&gt;&gt;x; p[x]=father; flag=false; &#125; &#125; &#125; if(char_f=='?') &#123; cin&gt;&gt;x; flag=false; cout&lt;&lt;x&lt;&lt;" "&lt;&lt;searchav(x)&lt;&lt;endl; &#125; &#125; return 0; &#125;]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[拓扑排序,逻辑开关]]></title>
     <url>%2F2019%2F03%2F09%2F%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F-%E9%80%BB%E8%BE%91%E5%BC%80%E5%85%B3%2F</url>
     <content type="text"><![CDATA[是我,还没弃坑… 前言在正文开始之前,我先来宣传一下我们工作室,这里是工作室官网当然,在没备案之前就是得加个. 拓扑排序是的,这个名字很怪.我们可以找一个直观的名字去描述拓扑排序,这个名字叫做不包含强连通子图.类似于不能出现1是2的父亲,2是1的父亲(这是一个很奇葩的例子)那么这种含有强连通子图,那么就倒霉了,他就不叫拓扑图,那么就无法用来dp了(这个后面会说) 那么如果没有类似于强连通子图(连通图),那么就恭喜你,这道题就可以使用dp来进行解决了,如果你的dp不熟悉,那么也可以另找退路,类似于记忆化搜索解决(这个后面会说到). 拓扑作用如果你想使用dp解决在图中的题目,你必须保证此图是拓扑图. 如果无法保证该图是拓扑图,那么也要恭喜你,你排除了一个无法使用的算法. 大概,以上就是拓扑了.下面就是一座崭新的世界 逻辑开关首先,我先上一段代码:12345if(x&gt;5)&#123;ans=ans+x;&#125; 很简洁但是实际上看起来一点都不高大上,在下面,我提供一种简单的算法:12ans=ans+(x&gt;5)*x; 是的,我相信你已经看懂了. 以上是我归来的第一篇内容,也是一篇纪念,以后可以回来再复习,也希望给大家带来参考.2019.3.9]]></content>
