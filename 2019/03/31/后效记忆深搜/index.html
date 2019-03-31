@@ -98,7 +98,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, smallfang">
+  <meta name="keywords" content="算法,">
 
 
 
@@ -111,17 +111,18 @@
 
 
 
-<meta name="description" content="是我,还没弃坑…">
+<meta name="description" content="hello ! 这里是smallfang !">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="拓扑排序,逻辑开关">
-<meta property="og:url" content="http://smallfang.tk/2019/03/09/拓扑排序-逻辑开关/index.html">
+<meta property="og:title" content="后效记忆深搜">
+<meta property="og:url" content="http://smallfang.tk/2019/03/31/后效记忆深搜/index.html">
 <meta property="og:site_name" content="smallfang">
-<meta property="og:description" content="是我,还没弃坑…">
+<meta property="og:description" content="hello ! 这里是smallfang !">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-09T13:55:00.244Z">
+<meta property="og:updated_time" content="2019-03-31T00:59:37.405Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="拓扑排序,逻辑开关">
-<meta name="twitter:description" content="是我,还没弃坑…">
+<meta name="twitter:title" content="后效记忆深搜">
+<meta name="twitter:description" content="hello ! 这里是smallfang !">
 
 
 
@@ -151,13 +152,13 @@
 
 
 
-  <link rel="canonical" href="http://smallfang.tk/2019/03/09/拓扑排序-逻辑开关/">
+  <link rel="canonical" href="http://smallfang.tk/2019/03/31/后效记忆深搜/">
 
 
 
 
 
-  <title>拓扑排序,逻辑开关 | smallfang</title>
+  <title>后效记忆深搜 | smallfang</title>
   
 
 
@@ -316,7 +317,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://smallfang.tk/2019/03/09/拓扑排序-逻辑开关/">
+    <link itemprop="mainEntityOfPage" href="http://smallfang.tk/2019/03/31/后效记忆深搜/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="smallfang">
@@ -333,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">拓扑排序,逻辑开关</h1>
+          <h1 class="post-title" itemprop="name headline">后效记忆深搜</h1>
         
 
         <div class="post-meta">
@@ -345,8 +346,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-09T21:36:19+08:00">
-                2019-03-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-31T08:44:48+08:00">
+                2019-03-31
               </time>
             
 
@@ -364,8 +365,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/09/拓扑排序-逻辑开关/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/09/拓扑排序-逻辑开关/" itemprop="commentCount"></span>
+                <a href="/2019/03/31/后效记忆深搜/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/31/后效记忆深搜/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -387,7 +388,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  423
+                  233
                 </span>
               
 
@@ -424,19 +425,13 @@
       
 
       
-        <p>是我,还没弃坑…</p>
+        <p>hello ! 这里是smallfang !</p>
 <a id="more"></a>
 <hr>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在正文开始之前,我先来宣传一下我们工作室,<a href="http://gugug.cn." target="_blank" rel="noopener">这里是工作室官网</a><br>当然,在没备案之前就是得加个.</p>
-<h1 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h1><p>是的,这个名字很怪.我们可以找一个直观的名字去描述拓扑排序,这个名字叫做不包含强连通子图.类似于不能出现1是2的父亲,2是1的父亲<del>(这是一个很奇葩的例子)</del>那么这种含有强连通子图,那么就倒霉了,他就不叫拓扑图,那么就无法用来dp了(这个后面会说)</p>
-<p>那么如果没有类似于强连通子图(连通图),那么就恭喜你,这道题就可以使用dp来进行解决了,如果你的dp不熟悉,那么也可以另找退路,类似于记忆化搜索解决(这个后面会说到).</p>
-<h2 id="拓扑作用"><a href="#拓扑作用" class="headerlink" title="拓扑作用"></a>拓扑作用</h2><p>如果你想使用dp解决在图中的题目,你必须保证此图是拓扑图.</p>
-<p>如果无法保证该图是拓扑图,那么也要恭喜你,你排除了一个无法使用的算法.</p>
-<p>大概,以上就是拓扑了.<br>下面就是一座崭新的世界</p>
-<h1 id="逻辑开关"><a href="#逻辑开关" class="headerlink" title="逻辑开关"></a>逻辑开关</h1><p>首先,我先上一段代码:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span>(x&gt;<span class="number">5</span>)</span><br><span class="line">&#123;</span><br><span class="line">ans=ans+x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>很简洁但是实际上看起来一点都不高大上,在下面,我提供一种简单的算法:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ans=ans+(x&gt;<span class="number">5</span>)*x;</span><br></pre></td></tr></table></figure></p>
-<p>是的,我相信你已经看懂了.</p>
-<p>以上是我归来的第一篇内容,也是一篇纪念,以后可以回来再复习,也希望给大家带来参考.<br>2019.3.9</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>有是很久没有更博客了,今天做出来了一道dfs的题,感觉比较有代表性,也是怕自己忘记,应该可以拿出来分享.希望大家喜欢.</p>
+<h1 id="后效记忆深搜"><a href="#后效记忆深搜" class="headerlink" title="后效记忆深搜"></a>后效记忆深搜</h1><p>类似于刻石碑。</p>
+<h1 id="例题代码"><a href="#例题代码" class="headerlink" title="例题代码"></a>例题代码</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// luogu-judger-enable-o2</span></span><br><span class="line"><span class="comment">// luogu-judger-enable-o2</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> tell[<span class="number">200001</span>];</span><br><span class="line"><span class="keyword">int</span> b[<span class="number">200001</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ifstream fin;</span><br><span class="line">	fin.open(<span class="string">"a.in"</span>);</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;tell[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> ans=<span class="number">2147483647</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">    	<span class="keyword">if</span>(b[i]!=<span class="number">0</span>) </span><br><span class="line">    	&#123;</span><br><span class="line">    		<span class="keyword">continue</span>;</span><br><span class="line">		&#125;</span><br><span class="line">        <span class="keyword">int</span> t=i;</span><br><span class="line">    	b[t]=<span class="number">1</span>;</span><br><span class="line">    	<span class="keyword">int</span> s[<span class="number">100000</span>]=&#123;<span class="number">0</span>,t&#125;,z=<span class="number">1</span>;</span><br><span class="line">    	</span><br><span class="line">    	<span class="keyword">while</span>(b[tell[t]]==<span class="number">0</span>)</span><br><span class="line">    	&#123;</span><br><span class="line">    	    t=tell[t];</span><br><span class="line">    	    s[++z]=t;</span><br><span class="line">    	    b[t]=z;</span><br><span class="line">    	&#125;</span><br><span class="line">    	<span class="keyword">if</span>(b[tell[t]]&gt;<span class="number">0</span>)</span><br><span class="line">    	ans=min(ans,z+<span class="number">1</span>-b[tell[t]]);</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=z;i++)</span><br><span class="line">    	b[s[i]]*=<span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以后会补上的…qwq</p>
 
       
     </div>
@@ -452,6 +447,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+        </div>
+      
 
       
       
@@ -461,8 +462,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/20/POJ-登山/" rel="next" title="POJ-登山">
-                <i class="fa fa-chevron-left"></i> POJ-登山
+              <a href="/2019/03/09/家谱/" rel="next" title="家谱">
+                <i class="fa fa-chevron-left"></i> 家谱
               </a>
             
           </div>
@@ -470,10 +471,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/09/家谱/" rel="prev" title="家谱">
-                家谱 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -684,7 +681,7 @@ function setnight()
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#拓扑排序"><span class="nav-number">2.</span> <span class="nav-text">拓扑排序</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#拓扑作用"><span class="nav-number">2.1.</span> <span class="nav-text">拓扑作用</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#逻辑开关"><span class="nav-number">3.</span> <span class="nav-text">逻辑开关</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#后效记忆深搜"><span class="nav-number">2.</span> <span class="nav-text">后效记忆深搜</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#例题代码"><span class="nav-number">3.</span> <span class="nav-text">例题代码</span></a></li></ol></div>
             
 
           </div>

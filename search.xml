@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[后效记忆深搜]]></title>
+    <url>%2F2019%2F03%2F31%2F%E5%90%8E%E6%95%88%E8%AE%B0%E5%BF%86%E6%B7%B1%E6%90%9C%2F</url>
+    <content type="text"><![CDATA[hello ! 这里是smallfang ! 前言有是很久没有更博客了,今天做出来了一道dfs的题,感觉比较有代表性,也是怕自己忘记,应该可以拿出来分享.希望大家喜欢. 后效记忆深搜类似于刻石碑。 例题代码12345678910111213141516171819202122232425262728293031323334353637383940414243444546// luogu-judger-enable-o2// luogu-judger-enable-o2#include &lt;iostream&gt;#include &lt;cstring&gt;#include &lt;bitset&gt;#include &lt;map&gt;#include &lt;fstream&gt;using namespace std;int tell[200001];int b[200001];int main()&#123; ifstream fin; fin.open("a.in"); int n; cin&gt;&gt;n; for(int i=1;i&lt;=n;i++) &#123; cin&gt;&gt;tell[i]; &#125; int ans=2147483647; for(int i=1;i&lt;=n;i++) &#123; if(b[i]!=0) &#123; continue; &#125; int t=i; b[t]=1; int s[100000]=&#123;0,t&#125;,z=1; while(b[tell[t]]==0) &#123; t=tell[t]; s[++z]=t; b[t]=z; &#125; if(b[tell[t]]&gt;0) ans=min(ans,z+1-b[tell[t]]); for(int i=1;i&lt;=z;i++) b[s[i]]*=-1; &#125; cout&lt;&lt;ans; return 0;&#125; 以后会补上的…qwq]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[家谱]]></title>
     <url>%2F2019%2F03%2F09%2F%E5%AE%B6%E8%B0%B1%2F</url>
     <content type="text"><![CDATA[blog … map是个好东西 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354#include &lt;iostream&gt;#include &lt;string&gt;#include &lt;map&gt;using namespace std;map&lt;string,string&gt;p;string searchav(string x)&#123; if(x!=p[x]) p[x]=searchav(p[x]); return p[x];&#125;int main()&#123; bool flag=false; for(;;) &#123; string x; char char_f; if(flag==false) cin&gt;&gt;char_f; if(char_f=='$') &#123; break; &#125; if(char_f=='#') &#123; cin&gt;&gt;x; string father=x; if(p[x]=="") p[x]=x; for(;;) &#123; cin&gt;&gt;char_f;flag=true; if(char_f!='+')break; else &#123; cin&gt;&gt;x; p[x]=father; flag=false; &#125; &#125; &#125; if(char_f=='?') &#123; cin&gt;&gt;x; flag=false; cout&lt;&lt;x&lt;&lt;" "&lt;&lt;searchav(x)&lt;&lt;endl; &#125; &#125; return 0; &#125;]]></content>
