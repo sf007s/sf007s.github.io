@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://smallfang.tk/"/>
-  <updated>2019-04-01T13:57:31.004Z</updated>
+  <updated>2019-05-01T07:45:14.606Z</updated>
   <id>http://smallfang.tk/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>指针</title>
+    <link href="http://smallfang.tk/2019/05/01/%E6%8C%87%E9%92%88/"/>
+    <id>http://smallfang.tk/2019/05/01/指针/</id>
+    <published>2019-05-01T06:56:52.000Z</published>
+    <updated>2019-05-01T07:45:14.606Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>…</p><a id="more"></a><p>终究是更新了</p><h1 id="定义与赋值"><a href="#定义与赋值" class="headerlink" title="定义与赋值"></a>定义与赋值</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>类型(int,char,bool…) * 变量名;</p><p>举个例子:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p=<span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure></p><p>实际上,指针变量p指向的是一个<strong>地址</strong>.NULL表示空.</p><h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><p>首先,先让我们举个例子.</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p=&amp;a;</span><br></pre></td></tr></table></figure><p>其中 &amp; 代表 a 的地址,这句话的意义就是将p指向变量a.</p><hr><p><strong>!注意!</strong></p><p>变量a与*p的<strong>类型</strong>必须保证一致.</p><hr><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">int</span> *p=&amp;a;</span><br></pre></td></tr></table></figure><h1 id="引用与运算"><a href="#引用与运算" class="headerlink" title="引用与运算"></a>引用与运算</h1><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>下表为指针变量与普通变量对比表</p><table><thead><tr><th style="text-align:right">指针变量</th><th style="text-align:right">普通变量</th></tr></thead><tbody><tr><td style="text-align:right">p</td><td style="text-align:right">&amp;a</td></tr><tr><td style="text-align:right">*p</td><td style="text-align:right">a</td></tr><tr><td style="text-align:right">*p=5</td><td style="text-align:right">a=5</td></tr></tbody></table><h2 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h2><p>+,-运算<br><strong>例题1</strong> 输入N个整数,使用指针变量访问输出.</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">101</span>],n;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> *p=&amp;a[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;*p&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        p++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>输入</strong><br>4<br>2 1 6 0</p><p><strong>输出</strong><br>2 1 6 0</p><p>p++ 是用来指向下一个指针地址</p><p>p - - 是用来指向上一个指针地址</p><p><strong>They are not same</strong></p><h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>无类型指针</p><h1 id="指针与数组"><a href="#指针与数组" class="headerlink" title="指针与数组"></a>指针与数组</h1><h2 id="指针用作数组名"><a href="#指针用作数组名" class="headerlink" title="指针用作数组名"></a>指针用作数组名</h2><p>关于动态数组<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *a=<span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>];</span><br></pre></td></tr></table></figure></p><p>代表我要申请多个变量空间,这也就是传说中的动态数组<del>(其中一种)</del>.</p><p>动态数组的优点:在oi中,大数据可能超时空的情况是比较纠结的事,用小数组只能得部分分,大数据可能爆空间.使用动态数组,可以确保在确定小数据没问题的基础上,尽量满足大数据的需求.</p><p>我们可以将指针指向数组,然后我们可以使用指针代替数组。</p><h1 id="指针与字符串"><a href="#指针与字符串" class="headerlink" title="指针与字符串"></a>指针与字符串</h1><h2 id="字符串的表现形式"><a href="#字符串的表现形式" class="headerlink" title="字符串的表现形式"></a>字符串的表现形式</h2><p>在c++中我们可以使用两种方法访问指针</p><p><strong>法1</strong><br>使用字符数组存放一个字符串，然后输出此字符串<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> str[]=<span class="string">"STRING"</span>;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;str;</span><br></pre></td></tr></table></figure></p><p><strong>法2</strong><br>用字符指针指向一个字符串,可以不定义字符数组而定一个字符指针.用字符指针指向字符串中的字符.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> * str=<span class="string">"STRING"</span>;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;str;</span><br></pre></td></tr></table></figure></p><h2 id="字符串指针作函数参数"><a href="#字符串指针作函数参数" class="headerlink" title="字符串指针作函数参数"></a>字符串指针作函数参数</h2><p>将一个字符串从一个函数传递到另外一个函数,可以用地址传递的方法,即用字符数组名做参数或用指向字符的指针变量做参数，在被调用的函数中可以被改变字符串内容，在主调函数中可以得到得到改变了的字符串。</p><p><strong>例题2</strong> 说有一个100长度zfc，知道基本的资格和成绩，也将作为奋斗组成为最心动的是重组后的字符串。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;&lt;p&gt;…&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="算法" scheme="http://smallfang.tk/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="指针" scheme="http://smallfang.tk/tags/%E6%8C%87%E9%92%88/"/>
+    
+  </entry>
   
   <entry>
     <title>蓝桥杯-T3</title>
@@ -392,28 +414,6 @@
     
     
       <category term="hexo" scheme="http://smallfang.tk/tags/hexo/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>洛谷题解-AT2281-Sum of Three Integers</title>
-    <link href="http://smallfang.tk/2018/12/06/%E6%B4%9B%E8%B0%B7%E9%A2%98%E8%A7%A3-AT2281-Sum-of-Three-Integers/"/>
-    <id>http://smallfang.tk/2018/12/06/洛谷题解-AT2281-Sum-of-Three-Integers/</id>
-    <published>2018-12-06T12:25:07.000Z</published>
-    <updated>2018-12-13T14:08:29.951Z</updated>
-    
-    <content type="html"><![CDATA[<p>1234</p><a id="more"></a><p>嘿嘿嘿,做红题的感觉真不错</p><h1 id="题目大意"><a href="#题目大意" class="headerlink" title="题目大意"></a>题目大意</h1><p>这道题就是求a+b+c=s有几种等式成立的可能性</p><p>0&lt;=a,b,c&lt;=k</p><p>给定s,k;</p><p>求出方案数.</p><h1 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h1><h2 id="暴力n-3"><a href="#暴力n-3" class="headerlink" title="暴力n^3"></a>暴力n^3</h2><p>对,看到是红题就认为暴力n^3能过，然后就凉了…</p><p>下面是代码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">    int k,s;</span><br><span class="line">    cin&gt;&gt;k&gt;&gt;s;</span><br><span class="line">    int ans=0;</span><br><span class="line">    for(int i=0;i&lt;=k;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        for(int j=0;j&lt;=k;j++)</span><br><span class="line">        &#123;</span><br><span class="line">            for(int ij=0;ij&lt;=k;ij++)</span><br><span class="line">            &#123;</span><br><span class="line">                if(i+j+ij==s)</span><br><span class="line">                &#123;</span><br><span class="line">                    ans++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="n-2-算法"><a href="#n-2-算法" class="headerlink" title="$n^2$算法"></a>$n^2$算法</h2><p>em…</p><p>可以写两个循环求出第3个值。如果第三个值符合要求，则答案++,下面是AC代码</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">#include &lt;iostream&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()</span><br><span class="line">&#123;</span><br><span class="line">int k,s;</span><br><span class="line">cin&gt;&gt;k&gt;&gt;s;</span><br><span class="line">int ans=0;</span><br><span class="line">for(int i=0;i&lt;=k;i++)</span><br><span class="line">&#123;</span><br><span class="line">for(int j=0;j&lt;=k;j++)</span><br><span class="line">&#123;</span><br><span class="line">int ij=s-i-j;</span><br><span class="line">if(ij&lt;=k &amp;&amp; ij &gt;=0)ans++;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">cout&lt;&lt;ans&lt;&lt;endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      1234
-    
-    </summary>
-    
-      <category term="洛谷题解" scheme="http://smallfang.tk/categories/%E6%B4%9B%E8%B0%B7%E9%A2%98%E8%A7%A3/"/>
-    
-    
-      <category term="题解" scheme="http://smallfang.tk/tags/%E9%A2%98%E8%A7%A3/"/>
     
   </entry>
   
