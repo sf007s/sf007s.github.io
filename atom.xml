@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://smallfang.tk/"/>
-  <updated>2019-05-01T07:45:14.606Z</updated>
+  <updated>2019-05-05T13:00:47.432Z</updated>
   <id>http://smallfang.tk/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>map</title>
+    <link href="http://smallfang.tk/2019/05/05/map/"/>
+    <id>http://smallfang.tk/2019/05/05/map/</id>
+    <published>2019-05-05T10:52:29.000Z</published>
+    <updated>2019-05-05T13:00:47.432Z</updated>
+    
+    <content type="html"><![CDATA[<p>“让我们为stl鼓掌!</p><p>–写于sf的低谷时期</p><a id="more"></a><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>最近不再状态。但是正在慢慢恢复,但是最近也是一直在忙,6月份前就可能不写博客了。我们6月份就放假了,可能假期的时候做到日更。</p><h1 id="map简介"><a href="#map简介" class="headerlink" title="map简介"></a>map简介</h1><p>“STL大法好!</p><p>有没有这样一种情况我们仅仅需要数组a[0],a[2147483647]。可是定义 a[2147483647]又太浪费空间,我们应该使用什么神仙做法才是最好的呢?</p><p><del>文章标题都写了啊,当然是map</del></p><p>可以把它当成一个数组来用(里面其实放了一个pair(数对)),插入o(1),输出o(log).<del>(我们可以说,用map当数组只有0次和无限次)</del></p><h1 id="定义方法"><a href="#定义方法" class="headerlink" title="定义方法"></a>定义方法</h1><p>定义方法:<br>map &lt; int , int &gt; a;</p><h1 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h1><p>可以普通使用数组的方式.</p><h1 id="为啥使用它"><a href="#为啥使用它" class="headerlink" title="为啥使用它"></a>为啥使用它</h1><p>因为它又可变长数组,并且非常省地(防止tle),可以拿char当数组下标或者结构体甚至string!就是一款利器.</p><p>map &lt; int  , int &gt; a;<br>第一个int 是数组下标是什么类型的.<br>第二个int 是输出的类型是啥.</p><p>e.x.</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">map</span>&lt; <span class="keyword">int</span> , <span class="keyword">int</span> &gt; a;</span><br><span class="line">a[<span class="number">1</span>]=<span class="number">12</span>;</span><br><span class="line">a[<span class="number">214747</span>]=<span class="number">12</span>；</span><br><span class="line"><span class="built_in">map</span>&lt; <span class="built_in">string</span> , <span class="keyword">int</span> &gt; b;</span><br><span class="line">b[<span class="string">"123"</span>]=<span class="number">123</span>;</span><br><span class="line">b[<span class="string">"7878"</span>]=<span class="number">3244</span>;</span><br></pre></td></tr></table></figure><h1 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h1><p>啊!我喜欢上了map,但是如何表示一个二维数组呢?</p><p>map &lt; int , map&lt; int , int &gt; &gt; a;</p><p>我们可以使用<br>a[112][12]=123;</p><p>三维数组各位也应该都知道了!</p><center>-The end-</center>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;“让我们为stl鼓掌!&lt;/p&gt;
+&lt;p&gt;–写于sf的低谷时期&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="神奇的好东西" scheme="http://smallfang.tk/tags/%E7%A5%9E%E5%A5%87%E7%9A%84%E5%A5%BD%E4%B8%9C%E8%A5%BF/"/>
+    
+  </entry>
+  
+  <entry>
     <title>指针</title>
     <link href="http://smallfang.tk/2019/05/01/%E6%8C%87%E9%92%88/"/>
     <id>http://smallfang.tk/2019/05/01/指针/</id>
     <published>2019-05-01T06:56:52.000Z</published>
-    <updated>2019-05-01T07:45:14.606Z</updated>
+    <updated>2019-05-02T04:36:35.522Z</updated>
     
     <content type="html"><![CDATA[<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>…</p><a id="more"></a><p>终究是更新了</p><h1 id="定义与赋值"><a href="#定义与赋值" class="headerlink" title="定义与赋值"></a>定义与赋值</h1><h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><p>类型(int,char,bool…) * 变量名;</p><p>举个例子:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *p=<span class="literal">NULL</span>;</span><br></pre></td></tr></table></figure></p><p>实际上,指针变量p指向的是一个<strong>地址</strong>.NULL表示空.</p><h2 id="赋值"><a href="#赋值" class="headerlink" title="赋值"></a>赋值</h2><p>首先,先让我们举个例子.</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p=&amp;a;</span><br></pre></td></tr></table></figure><p>其中 &amp; 代表 a 的地址,这句话的意义就是将p指向变量a.</p><hr><p><strong>!注意!</strong></p><p>变量a与*p的<strong>类型</strong>必须保证一致.</p><hr><h2 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> a;</span><br><span class="line"><span class="keyword">int</span> *p=&amp;a;</span><br></pre></td></tr></table></figure><h1 id="引用与运算"><a href="#引用与运算" class="headerlink" title="引用与运算"></a>引用与运算</h1><h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>下表为指针变量与普通变量对比表</p><table><thead><tr><th style="text-align:right">指针变量</th><th style="text-align:right">普通变量</th></tr></thead><tbody><tr><td style="text-align:right">p</td><td style="text-align:right">&amp;a</td></tr><tr><td style="text-align:right">*p</td><td style="text-align:right">a</td></tr><tr><td style="text-align:right">*p=5</td><td style="text-align:right">a=5</td></tr></tbody></table><h2 id="运算"><a href="#运算" class="headerlink" title="运算"></a>运算</h2><p>+,-运算<br><strong>例题1</strong> 输入N个整数,使用指针变量访问输出.</p><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> a[<span class="number">101</span>],n;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> *p=&amp;a[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;*p&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">        p++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>输入</strong><br>4<br>2 1 6 0</p><p><strong>输出</strong><br>2 1 6 0</p><p>p++ 是用来指向下一个指针地址</p><p>p - - 是用来指向上一个指针地址</p><p><strong>They are not same</strong></p><h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>无类型指针</p><h1 id="指针与数组"><a href="#指针与数组" class="headerlink" title="指针与数组"></a>指针与数组</h1><h2 id="指针用作数组名"><a href="#指针用作数组名" class="headerlink" title="指针用作数组名"></a>指针用作数组名</h2><p>关于动态数组<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> *a=<span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>];</span><br></pre></td></tr></table></figure></p><p>代表我要申请多个变量空间,这也就是传说中的动态数组<del>(其中一种)</del>.</p><p>动态数组的优点:在oi中,大数据可能超时空的情况是比较纠结的事,用小数组只能得部分分,大数据可能爆空间.使用动态数组,可以确保在确定小数据没问题的基础上,尽量满足大数据的需求.</p><p>我们可以将指针指向数组,然后我们可以使用指针代替数组。</p><h1 id="指针与字符串"><a href="#指针与字符串" class="headerlink" title="指针与字符串"></a>指针与字符串</h1><h2 id="字符串的表现形式"><a href="#字符串的表现形式" class="headerlink" title="字符串的表现形式"></a>字符串的表现形式</h2><p>在c++中我们可以使用两种方法访问指针</p><p><strong>法1</strong><br>使用字符数组存放一个字符串，然后输出此字符串<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> str[]=<span class="string">"STRING"</span>;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;str;</span><br></pre></td></tr></table></figure></p><p><strong>法2</strong><br>用字符指针指向一个字符串,可以不定义字符数组而定一个字符指针.用字符指针指向字符串中的字符.<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> * str=<span class="string">"STRING"</span>;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;str;</span><br></pre></td></tr></table></figure></p><h2 id="字符串指针作函数参数"><a href="#字符串指针作函数参数" class="headerlink" title="字符串指针作函数参数"></a>字符串指针作函数参数</h2><p>将一个字符串从一个函数传递到另外一个函数,可以用地址传递的方法,即用字符数组名做参数或用指向字符的指针变量做参数，在被调用的函数中可以被改变字符串内容，在主调函数中可以得到得到改变了的字符串。</p><p><strong>例题2</strong> 说有一个100长度zfc，知道基本的资格和成绩，也将作为奋斗组成为最心动的是重组后的字符串。</p>]]></content>
     
@@ -77,24 +98,6 @@
   </entry>
   
   <entry>
-    <title>拓扑排序,逻辑开关</title>
-    <link href="http://smallfang.tk/2019/03/09/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F-%E9%80%BB%E8%BE%91%E5%BC%80%E5%85%B3/"/>
-    <id>http://smallfang.tk/2019/03/09/拓扑排序-逻辑开关/</id>
-    <published>2019-03-09T13:36:19.000Z</published>
-    <updated>2019-03-09T13:55:00.244Z</updated>
-    
-    <content type="html"><![CDATA[<p>是我,还没弃坑…</p><a id="more"></a><hr><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在正文开始之前,我先来宣传一下我们工作室,<a href="http://gugug.cn." target="_blank" rel="noopener">这里是工作室官网</a><br>当然,在没备案之前就是得加个.</p><h1 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h1><p>是的,这个名字很怪.我们可以找一个直观的名字去描述拓扑排序,这个名字叫做不包含强连通子图.类似于不能出现1是2的父亲,2是1的父亲<del>(这是一个很奇葩的例子)</del>那么这种含有强连通子图,那么就倒霉了,他就不叫拓扑图,那么就无法用来dp了(这个后面会说)</p><p>那么如果没有类似于强连通子图(连通图),那么就恭喜你,这道题就可以使用dp来进行解决了,如果你的dp不熟悉,那么也可以另找退路,类似于记忆化搜索解决(这个后面会说到).</p><h2 id="拓扑作用"><a href="#拓扑作用" class="headerlink" title="拓扑作用"></a>拓扑作用</h2><p>如果你想使用dp解决在图中的题目,你必须保证此图是拓扑图.</p><p>如果无法保证该图是拓扑图,那么也要恭喜你,你排除了一个无法使用的算法.</p><p>大概,以上就是拓扑了.<br>下面就是一座崭新的世界</p><h1 id="逻辑开关"><a href="#逻辑开关" class="headerlink" title="逻辑开关"></a>逻辑开关</h1><p>首先,我先上一段代码:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span>(x&gt;<span class="number">5</span>)</span><br><span class="line">&#123;</span><br><span class="line">ans=ans+x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>很简洁但是实际上看起来一点都不高大上,在下面,我提供一种简单的算法:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ans=ans+(x&gt;<span class="number">5</span>)*x;</span><br></pre></td></tr></table></figure></p><p>是的,我相信你已经看懂了.</p><p>以上是我归来的第一篇内容,也是一篇纪念,以后可以回来再复习,也希望给大家带来参考.<br>2019.3.9</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;是我,还没弃坑…&lt;/p&gt;
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
     <title>家谱</title>
     <link href="http://smallfang.tk/2019/03/09/%E5%AE%B6%E8%B0%B1/"/>
     <id>http://smallfang.tk/2019/03/09/家谱/</id>
@@ -106,6 +109,24 @@
     <summary type="html">
     
       &lt;p&gt;blog&lt;/p&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>拓扑排序,逻辑开关</title>
+    <link href="http://smallfang.tk/2019/03/09/%E6%8B%93%E6%89%91%E6%8E%92%E5%BA%8F-%E9%80%BB%E8%BE%91%E5%BC%80%E5%85%B3/"/>
+    <id>http://smallfang.tk/2019/03/09/拓扑排序-逻辑开关/</id>
+    <published>2019-03-09T13:36:19.000Z</published>
+    <updated>2019-03-09T13:55:00.244Z</updated>
+    
+    <content type="html"><![CDATA[<p>是我,还没弃坑…</p><a id="more"></a><hr><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>在正文开始之前,我先来宣传一下我们工作室,<a href="http://gugug.cn." target="_blank" rel="noopener">这里是工作室官网</a><br>当然,在没备案之前就是得加个.</p><h1 id="拓扑排序"><a href="#拓扑排序" class="headerlink" title="拓扑排序"></a>拓扑排序</h1><p>是的,这个名字很怪.我们可以找一个直观的名字去描述拓扑排序,这个名字叫做不包含强连通子图.类似于不能出现1是2的父亲,2是1的父亲<del>(这是一个很奇葩的例子)</del>那么这种含有强连通子图,那么就倒霉了,他就不叫拓扑图,那么就无法用来dp了(这个后面会说)</p><p>那么如果没有类似于强连通子图(连通图),那么就恭喜你,这道题就可以使用dp来进行解决了,如果你的dp不熟悉,那么也可以另找退路,类似于记忆化搜索解决(这个后面会说到).</p><h2 id="拓扑作用"><a href="#拓扑作用" class="headerlink" title="拓扑作用"></a>拓扑作用</h2><p>如果你想使用dp解决在图中的题目,你必须保证此图是拓扑图.</p><p>如果无法保证该图是拓扑图,那么也要恭喜你,你排除了一个无法使用的算法.</p><p>大概,以上就是拓扑了.<br>下面就是一座崭新的世界</p><h1 id="逻辑开关"><a href="#逻辑开关" class="headerlink" title="逻辑开关"></a>逻辑开关</h1><p>首先,我先上一段代码:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">if</span>(x&gt;<span class="number">5</span>)</span><br><span class="line">&#123;</span><br><span class="line">ans=ans+x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>很简洁但是实际上看起来一点都不高大上,在下面,我提供一种简单的算法:<br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ans=ans+(x&gt;<span class="number">5</span>)*x;</span><br></pre></td></tr></table></figure></p><p>是的,我相信你已经看懂了.</p><p>以上是我归来的第一篇内容,也是一篇纪念,以后可以回来再复习,也希望给大家带来参考.<br>2019.3.9</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;是我,还没弃坑…&lt;/p&gt;
     
     </summary>
     
@@ -394,26 +415,6 @@
     
     
       <category term="flag" scheme="http://smallfang.tk/tags/flag/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>博客更新日志</title>
-    <link href="http://smallfang.tk/2018/12/08/%E5%8D%9A%E5%AE%A2%E6%9B%B4%E6%96%B0%E6%97%A5%E5%BF%97/"/>
-    <id>http://smallfang.tk/2018/12/08/博客更新日志/</id>
-    <published>2018-12-08T14:13:28.000Z</published>
-    <updated>2019-01-07T10:08:44.712Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="V0-2-8"><a href="#V0-2-8" class="headerlink" title="V0.2.8"></a>V0.2.8</h1><a id="more"></a><ul><li>2019.1.7</li><li>(+)h1类型触摸时放大</li><li>(+)cookie-night</li><li>(change)功能下移</li></ul><h1 id="V0-2-7"><a href="#V0-2-7" class="headerlink" title="V0.2.7"></a>V0.2.7</h1><ul><li>2019.1.5</li><li>(change)文章圆角</li><li>(change)按钮圆角</li><li>(change)回到顶部与菜单并行</li></ul><h1 id="V0-2-5"><a href="#V0-2-5" class="headerlink" title="V0.2.5"></a>V0.2.5</h1><ul><li>2019.1.5</li><li>(+)滚动框样式</li></ul><h1 id="V0-2-1"><a href="#V0-2-1" class="headerlink" title="V0.2.1"></a>V0.2.1</h1><ul><li>2018.12.20</li><li>(+)鼠标样式</li></ul><h1 id="V0-2-0"><a href="#V0-2-0" class="headerlink" title="V0.2.0"></a>V0.2.0</h1><ul><li>2018.12.18</li><li>(+)评论功能</li><li>(+)站内搜索功能</li><li>(+)背景样式</li><li>(+)增加加载条</li></ul><h1 id="V0-1-0"><a href="#V0-1-0" class="headerlink" title="V0.1.0"></a>V0.1.0</h1><ul><li>基础</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h1 id=&quot;V0-2-8&quot;&gt;&lt;a href=&quot;#V0-2-8&quot; class=&quot;headerlink&quot; title=&quot;V0.2.8&quot;&gt;&lt;/a&gt;V0.2.8&lt;/h1&gt;
-    
-    </summary>
-    
-    
-      <category term="hexo" scheme="http://smallfang.tk/tags/hexo/"/>
     
   </entry>
   
