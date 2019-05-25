@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[绝望]]></title>
+    <url>%2F2019%2F05%2F25%2F%E7%BB%9D%E6%9C%9B%2F</url>
+    <content type="text"><![CDATA[你知道什么是绝望吗? 25号了学校还没定下来,这就是绝望…]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[map]]></title>
     <url>%2F2019%2F05%2F05%2Fmap%2F</url>
     <content type="text"><![CDATA[“让我们为stl鼓掌! –写于sf的低谷时期 前言最近不再状态。但是正在慢慢恢复,但是最近也是一直在忙,6月份前就可能不写博客了。我们6月份就放假了,可能假期的时候做到日更。 map简介“STL大法好! 有没有这样一种情况我们仅仅需要数组a[0],a[2147483647]。可是定义 a[2147483647]又太浪费空间,我们应该使用什么神仙做法才是最好的呢? 文章标题都写了啊,当然是map 可以把它当成一个数组来用(里面其实放了一个pair(数对)),插入o(1),输出o(log).(我们可以说,用map当数组只有0次和无限次) 定义方法定义方法:map &lt; int , int &gt; a; 使用方法可以普通使用数组的方式. 为啥使用它因为它又可变长数组,并且非常省地(防止tle),可以拿char当数组下标或者结构体甚至string!就是一款利器. map &lt; int , int &gt; a;第一个int 是数组下标是什么类型的.第二个int 是输出的类型是啥. e.x. 123456map&lt; int , int &gt; a;a[1]=12;a[214747]=12；map&lt; string , int &gt; b;b["123"]=123;b["7878"]=3244; 拓展啊!我喜欢上了map,但是如何表示一个二维数组呢? map &lt; int , map&lt; int , int &gt; &gt; a; 我们可以使用a[112][12]=123; 三维数组各位也应该都知道了! -The end-]]></content>
