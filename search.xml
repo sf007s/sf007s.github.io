@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[绝望]]></title>
-    <url>%2F2019%2F05%2F25%2F%E7%BB%9D%E6%9C%9B%2F</url>
-    <content type="text"><![CDATA[你知道什么是绝望吗? 25号了学校还没定下来,这就是绝望…]]></content>
+    <title><![CDATA[单调队列与RMQ算法]]></title>
+    <url>%2F2019%2F06%2F23%2F%E5%8D%95%E8%B0%83%E9%98%9F%E5%88%97%E4%B8%8ERMQ%E7%AE%97%E6%B3%95%2F</url>
+    <content type="text"><![CDATA[六月,你好. 前言失踪人口回归.以后更新可能会快一点. 单调队列单调队列可以快速解决区间最值问题。让我们先来看一组数.1 2 3 4 5 6 7 8 9问题让我们找出每K个中最大值与最小值. 暴力方法复杂度:O(nk) 我们来看一下n与k的大小,n≤10^6,k≤1000你会发现暴力是拿不了满分的. 单调队列复杂度:O(nlogn)我们回到那组数据我们先找最大值我们必须保证数列单调并且有数值但不保证有k个 让我们来一道例题吧 例题LUOGU - P2251我们可以滚动一个双端队列先统计最小值 下面是一份标准的模板,应该很好理解,并且很直观 1234567891011121314151617181920212223242526272829for(int i=1;i&lt;=n;i++)&#123; //维护队尾 while(!minq.empty() &amp;&amp;a[i]&lt;=a[minq.back()]) &#123; minq.pop_back(); &#125; minq.push_back(i); //维护队头 if(i-minq.front()==k) minq.pop_front(); if(i&gt;=k) cout&lt;&lt;a[minq.front()]&lt;&lt;" ";&#125;cout&lt;&lt;endl;for(int i=1;i&lt;=n;i++)&#123; //维护队尾 while(!maxq.empty() &amp;&amp;a[i]&gt;=a[maxq.back()]) &#123; maxq.pop_back(); &#125; maxq.push_back(i); //维护队头 if(i-maxq.front()==k) maxq.pop_front(); if(i&gt;=k) cout&lt;&lt;a[maxq.front()]&lt;&lt;" "; &#125; 那么这道题就很简单了,AC代码如下: 12345678910111213141516171819202122232425262728293031323334#include &lt;iostream&gt;#include &lt;queue&gt;using namespace std;int a[1000001];deque&lt;int&gt; pa;int main()&#123; int n,k; cin&gt;&gt;n&gt;&gt;k; for(int i=1;i&lt;=n;i++) &#123; cin&gt;&gt;a[i]; &#125; for(int i=1;i&lt;=n;i++) &#123; while(!pa.empty() &amp;&amp; a[i]&lt;a[pa.back()]) &#123; pa.pop_back(); &#125; pa.push_back(i); if(i-pa.front()==k) pa.pop_front(); if(i&gt;=k) &#123; cout&lt;&lt;a[pa.front()]&lt;&lt;endl; &#125; &#125; return 0;&#125; RMQ标准代码如下: 12345678910111213141516171819202122232425262728293031for(int j=1;j&lt;=17;j++) &#123; int k=1&lt;&lt;(j-1); for(int i=1;i&lt;=n-2*k+1;i++) &#123; g[i][j]=min(g[i][j-1],g[i+k][j-1]); k=1&lt;&lt;(j-1); &#125; &#125; int c=2; for(int i=2;i&lt;=n;i++) &#123; if(i&lt;c) &#123; lg2[i]=lg2[i-1]; &#125; else &#123; lg2[i]=lg2[i-1]+1; c=c*2; &#125; &#125; for(int i=1;i&lt;=m;i++) &#123; int x,y; cin&gt;&gt;x&gt;&gt;y; int j=lg2[y-x+1]; int k=1&lt;&lt;j; cout&lt;&lt;min(g[x][j],g[y-k+1][j])&lt;&lt;" "; &#125; 暂时END]]></content>
+      <tags>
+        <tag>算法</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[map]]></title>

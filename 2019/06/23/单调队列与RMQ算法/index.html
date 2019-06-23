@@ -109,7 +109,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, smallfang">
+  <meta name="keywords" content="算法,">
 
 
 
@@ -122,13 +122,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="smallfang">
-<meta property="og:url" content="http://smallfang.tk/tags/神奇的好东西/index.html">
+<meta name="description" content="六月,你好.">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="单调队列与RMQ算法">
+<meta property="og:url" content="http://smallfang.tk/2019/06/23/单调队列与RMQ算法/index.html">
 <meta property="og:site_name" content="smallfang">
+<meta property="og:description" content="六月,你好.">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-06-23T00:55:37.995Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="smallfang">
+<meta name="twitter:title" content="单调队列与RMQ算法">
+<meta name="twitter:description" content="六月,你好.">
 
 
 
@@ -158,13 +163,13 @@
 
 
 
-  <link rel="canonical" href="http://smallfang.tk/tags/神奇的好东西/">
+  <link rel="canonical" href="http://smallfang.tk/2019/06/23/单调队列与RMQ算法/">
 
 
 
 
 
-  <title>标签: 神奇的好东西 | smallfang</title>
+  <title>单调队列与RMQ算法 | smallfang</title>
   
 
 
@@ -183,7 +188,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -309,52 +314,202 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>神奇的好东西<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://smallfang.tk/2019/06/23/单调队列与RMQ算法/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="smallfang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="smallfang">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/05/05/map/" itemprop="url">
-              
-                <span itemprop="name">map</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">单调队列与RMQ算法</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-05T18:52:29+08:00" content="2019-05-05">
-          05-05
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-06-23T08:16:35+08:00">
+                2019-06-23
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2019/06/23/单调队列与RMQ算法/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/06/23/单调队列与RMQ算法/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  584
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>六月,你好.<br><a id="more"></a></p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>失踪人口回归.以后更新可能会快一点.</p>
+<h1 id="单调队列"><a href="#单调队列" class="headerlink" title="单调队列"></a>单调队列</h1><p>单调队列可以快速解决区间最值问题。<br><strong>让我们先来看一组数.</strong><br>1 2 3 4 5 6 7 8 9<br><strong>问题让我们找出每K个中最大值与最小值.</strong></p>
+<h2 id="暴力方法"><a href="#暴力方法" class="headerlink" title="暴力方法"></a>暴力方法</h2><p>复杂度:O(nk)</p>
+<p>我们来看一下n与k的大小,n≤10^6,k≤1000<br>你会发现暴力是拿不了满分的.</p>
+<h2 id="单调队列-1"><a href="#单调队列-1" class="headerlink" title="单调队列"></a>单调队列</h2><p>复杂度:O(nlogn)<br>我们回到那组数据<br>我们先找最大值<br><strong>我们必须保证数列单调并且有数值但不保证有k个</strong></p>
+<p>让我们来一道例题吧</p>
+<h2 id="例题"><a href="#例题" class="headerlink" title="例题"></a>例题</h2><h3 id="LUOGU-P2251"><a href="#LUOGU-P2251" class="headerlink" title="LUOGU - P2251"></a>LUOGU - P2251</h3><p>我们可以滚动一个双端队列先统计最小值</p>
+<p>下面是一份标准的模板,应该很好理解,并且很直观</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//维护队尾</span></span><br><span class="line">    <span class="keyword">while</span>(!minq.empty() &amp;&amp;a[i]&lt;=a[minq.back()])</span><br><span class="line">    &#123;</span><br><span class="line">        minq.pop_back();</span><br><span class="line">    &#125;</span><br><span class="line">    minq.push_back(i);</span><br><span class="line">    <span class="comment">//维护队头</span></span><br><span class="line">    <span class="keyword">if</span>(i-minq.front()==k)</span><br><span class="line">        minq.pop_front();</span><br><span class="line">    <span class="keyword">if</span>(i&gt;=k)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;a[minq.front()]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment">//维护队尾</span></span><br><span class="line">    <span class="keyword">while</span>(!maxq.empty() &amp;&amp;a[i]&gt;=a[maxq.back()])</span><br><span class="line">    &#123;</span><br><span class="line">        maxq.pop_back();</span><br><span class="line">    &#125;</span><br><span class="line">    maxq.push_back(i);</span><br><span class="line">    <span class="comment">//维护队头</span></span><br><span class="line">    <span class="keyword">if</span>(i-maxq.front()==k)</span><br><span class="line">        maxq.pop_front();</span><br><span class="line">    <span class="keyword">if</span>(i&gt;=k)</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;a[maxq.front()]&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>那么这道题就很简单了,AC代码如下:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">int</span> a[<span class="number">1000001</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt; pa;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n,k;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;k;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">while</span>(!pa.empty() &amp;&amp; a[i]&lt;a[pa.back()])</span><br><span class="line">        &#123;</span><br><span class="line">            pa.pop_back();</span><br><span class="line">        &#125;</span><br><span class="line">        pa.push_back(i);</span><br><span class="line">        <span class="keyword">if</span>(i-pa.front()==k)</span><br><span class="line">            pa.pop_front();</span><br><span class="line">        <span class="keyword">if</span>(i&gt;=k)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span>&lt;&lt;a[pa.front()]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="RMQ"><a href="#RMQ" class="headerlink" title="RMQ"></a>RMQ</h1><p>标准代码如下:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=<span class="number">17</span>;j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> k=<span class="number">1</span>&lt;&lt;(j<span class="number">-1</span>);</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n<span class="number">-2</span>*k+<span class="number">1</span>;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            g[i][j]=min(g[i][j<span class="number">-1</span>],g[i+k][j<span class="number">-1</span>]);</span><br><span class="line">            k=<span class="number">1</span>&lt;&lt;(j<span class="number">-1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> c=<span class="number">2</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span>(i&lt;c)</span><br><span class="line">        &#123;</span><br><span class="line">            lg2[i]=lg2[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            lg2[i]=lg2[i<span class="number">-1</span>]+<span class="number">1</span>;</span><br><span class="line">            c=c*<span class="number">2</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">int</span> x,y;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;x&gt;&gt;y;</span><br><span class="line">        <span class="keyword">int</span> j=lg2[y-x+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">int</span> k=<span class="number">1</span>&lt;&lt;j;</span><br><span class="line">        <span class="built_in">cout</span>&lt;&lt;min(g[x][j],g[y-k+<span class="number">1</span>][j])&lt;&lt;<span class="string">" "</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<p>暂时END</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/算法/" rel="tag"># 算法</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/05/map/" rel="next" title="map">
+                <i class="fa fa-chevron-left"></i> map
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -362,6 +517,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -384,8 +546,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -519,6 +690,22 @@ function setnight()
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单调队列"><span class="nav-number">2.</span> <span class="nav-text">单调队列</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#暴力方法"><span class="nav-number">2.1.</span> <span class="nav-text">暴力方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#单调队列-1"><span class="nav-number">2.2.</span> <span class="nav-text">单调队列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#例题"><span class="nav-number">2.3.</span> <span class="nav-text">例题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LUOGU-P2251"><span class="nav-number">2.3.1.</span> <span class="nav-text">LUOGU - P2251</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#RMQ"><span class="nav-number">3.</span> <span class="nav-text">RMQ</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -660,6 +847,10 @@ V0.2.8
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
